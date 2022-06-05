@@ -1,0 +1,19 @@
+.img-game {
+  width: 100%;
+  height: auto;
+  justify-content: center;
+}
+
+.slider-carousel {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.slick-prev::before {
+  color: rgb(255, 0, 0);
+}
+
+.slick-next::before {
+  color: rgb(255, 0, 0);
+}
