@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+.page-scroll {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.habiltys {
+  bottom: 10%;
+}
+
+/* .two {
+  background: red;
+} */
+
+.three {
+  background: blue;
+}
+
+.four {
+  height: 15vh;
+}
+
+.fourp {
+  /* background: aquamarine; */
+  height: 75vh;
+}
+
+.five {
+  background-color: aqua;
+  height: 50vh;
+}
+
+.six {
+  background-color: crimson;
+  height: 15vh;
+}
+
+.sixp {
+  height: 65vh;
+}
+
+.seven {
+  background: green;
+}
+
+.eight {
+  background: #1c1d21;
+}
