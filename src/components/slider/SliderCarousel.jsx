@@ -47,6 +47,9 @@ const SliderCarousel = ({ data }) => {
           <div>
             <img className="img-game" src={d.img} alt={d.title} />
             <p>{d.description}</p>
+            {d.page_url !== undefined && (
+              <a href={d.page_url}>Click para Ver 👀</a>
+            )}
           </div>
         ))}
       </Slider>

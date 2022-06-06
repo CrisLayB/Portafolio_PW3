@@ -13,12 +13,29 @@ import ImgHackerRank from './img/img-hackerrank.png'
 
 // Data
 import Robotic from './data/robotic.js'
-{
-  /* <ul>
-    https://www.codewars.com/users/CL%20The%20Dreamer
-    https://www.hackerrank.com/cristianlaynezb1
-  </ul> */
-}
+
+/**
+ * REFERENCIAS PARA LOS ICONOS DE LOS LENGUAJES Y FRAMEWORKS
+ * <a href="https://www.flaticon.com/free-icons/c-sharp" title="c sharp icons">C sharp icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/python" title="python icons">Python icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/javascript" title="javascript icons">Javascript icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/java" title="java icons">Java icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/postgre" title="postgre icons">Postgre icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/letter-c" title="letter c icons">Letter c icons created by Hight Quality Icons - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/html-5" title="html 5 icons">Html 5 icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/css-3" title="css 3 icons">Css 3 icons created by Freepik - Flaticon</a>
+ *
+ * <a href="https://www.flaticon.com/free-icons/unity" title="unity icons">Unity icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/react" title="react icons">React icons created by Kiranshastry - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/photoshop" title="photoshop icons">Photoshop icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/nodejs" title="nodejs icons">Nodejs icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/postgre" title="postgre icons">Postgre icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/raspberry-pi" title="raspberry pi icons">Raspberry pi icons created by Freepik - Flaticon</a>
+ *
+ * <a href="https://www.flaticon.com/free-icons/code" title="code icons">Code icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/toolbox" title="toolbox icons">Toolbox icons created by Freepik - Flaticon</a>
+ */
+
 const Portfolio = () => {
   return (
     <div className="App">
@@ -95,23 +112,29 @@ const Portfolio = () => {
         </section>
         <section className="eight">
           <div>
-            <h1>Cuando tengo la oportunidad y el tiempo realizo</h1>
-            <h1>varios ejercicios y desafios de código en páginas como:</h1>
+            <h1>
+              Cuando tengo la oportunidad y el tiempo realizo varios ejercicios
+              y desafios de código en páginas como:
+            </h1>
             <br />
             <div className="flex-competitive-code">
               <div class="flex-item-left">
-                <img
-                  className="img-competitive-code"
-                  src={ImgCodeWars}
-                  alt="codewars"
-                />
+                <a href="https://www.codewars.com/users/CL%20The%20Dreamer">
+                  <img
+                    className="img-competitive-code"
+                    src={ImgCodeWars}
+                    alt="codewars"
+                  />
+                </a>
               </div>
               <div class="flex-item-right">
-                <img
-                  className="img-competitive-code"
-                  src={ImgHackerRank}
-                  alt="hackerrank"
-                />
+                <a href="https://www.hackerrank.com/cristianlaynezb1">
+                  <img
+                    className="img-competitive-code"
+                    src={ImgHackerRank}
+                    alt="hackerrank"
+                  />
+                </a>
               </div>
             </div>
             <br />
@@ -121,7 +144,7 @@ const Portfolio = () => {
         <section className="nine">
           <div>
             <h1>Lenguajes de Programación</h1>
-            <ul>
+            {/* <ul>
               <li>C#</li>
               <li>Python</li>
               <li>JavaScript</li>
@@ -129,13 +152,13 @@ const Portfolio = () => {
               <li>Java</li>
               <li>C</li>
               <li>Kotlin</li>
-            </ul>
+            </ul> */}
           </div>
         </section>
         <section className="ten">
           <div>
             <h1>Herramientas y Frameworks</h1>
-            <ul>
+            {/* <ul>
               <li>Unity</li>
               <li>React</li>
               <li>PostgresSQL</li>
@@ -143,7 +166,7 @@ const Portfolio = () => {
               <li>Raspberry</li>
               <li>Linux</li>
               <li>Photoshop</li>
-            </ul>
+            </ul> */}
           </div>
         </section>
         <section className="eleven">

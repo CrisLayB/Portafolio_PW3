@@ -11,31 +11,32 @@ section {
   align-items: center;
   scroll-snap-align: start;
 }
-.page-scroll {
+/* .page-scroll {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;
-}
+} */
 
 .habiltys {
   bottom: 10%;
 }
-
-/* .two {
-  background: red;
-} */
 
 .three {
   background: blue;
 }
 
 .four {
-  height: 15vh;
+  height: 30vh;
 }
 
 .fourp {
-  /* background: aquamarine; */
-  height: 75vh;
+  height: 170vh;
+}
+
+@media screen and (min-width: 650px) {
+  .fourp {
+    height: 85vh;
+  }
 }
 
 .five {
@@ -50,6 +51,13 @@ section {
 
 .sixp {
   height: 65vh;
+}
+
+@media screen and (max-width: 860px) {
+  .sixp {
+    /* width: 75%; */
+    height: 50vh;
+  }
 }
 
 .seven {

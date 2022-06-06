@@ -24,13 +24,17 @@ body {
 }
 
 .img-competitive-code {
-  height: 100px;
+  height: 50px;
+  width: auto;
+  min-height: 50px;
+  min-width: 50px;
   cursor: pointer;
 }
 
 .text-about {
   color: white;
   font-size: 25px;
+  margin: 2.5rem;
 }
 
 /*! --------------------------------------------*/

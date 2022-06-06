@@ -1,6 +1,12 @@
+// Componentes
 import Contact from './components/Contact.jsx'
 import SliderCarousel from './components/slider/SliderCarousel.jsx'
+
+// Data
 import Uvg from './data/uvg.js'
+import Web from './data/web.js'
+
+import './css/About.css'
 
 const About = () => {
   return (
@@ -30,13 +36,11 @@ const About = () => {
               como el diseño de aplicaciones, matemáticas y he competido en unas
               cuantas hackatoons y competencias.
             </p>
-          </div>
-        </section>
-        <section className="two-about">
-          <div>
-            <h1>Me encanta poder aprender varios temas de computer science,</h1>
-            <h1>Estoy abierto a aprender/adquirir cualquier tipo de</h1>
-            <h1>conocimiento que pueda adquirir.</h1>
+            <h4>
+              Me encanta poder aprender varios temas de computer science, Estoy
+              abierto a aprender cualquier tipo de conocimiento que pueda
+              adquirir.
+            </h4>
           </div>
         </section>
         <section className="three-about">
@@ -47,32 +51,76 @@ const About = () => {
               <li>Programar</li>
               <li>Escuchar Música (especialmente de los 80's y 90's)</li>
               <li>Mirar Anime</li>
-              <li>Jugar Deportes</li>
+              <li>Jugar Deportes (Cuando tengo la oportunidad)</li>
             </ul>
           </div>
         </section>
         <section className="four-about">
           <div>
             <h1>Historial Académico</h1>
-            <aside>
-              <details>
-                <summary>Colegio Adventista JUBA - [2016 - 2019]</summary>
-                <p>El año 2016 a 2017 estudie 2do y 3ro básico.</p>
-                <p>El año 2018 a 2019 estudié bachillerato en Computación.</p>
-              </details>
-              <br />
-              <details>
-                <summary>
-                  Universidad del Valle de Guatemala - [2020 - 2024]
-                </summary>
-                <p>Algunas actividades realizadas por el momento en UVG:</p>
-                {/* <SliderCarousel data={Uvg} /> */}
-              </details>
-            </aside>
           </div>
         </section>
-        {/* <section className="five-about"></section> */}
+        <section className="five-about">
+          <div>
+            <h1>Colegio Adventista JUBA - [2016 - 2019]</h1>
+            <p>El año 2016 a 2017 curse los grados 2do y 3ro básico.</p>
+            <p>El año 2018 a 2019 estudié Bachillerato en Computación.</p>
+            <p>
+              En ese tiempo aproveche a aprender varias cosas tanto de la
+              programación como del Arte en 3D y el desarrollo de videojuegos.
+            </p>
+          </div>
+        </section>
+        <section className="five-about-2">
+          <div>Implementar carrousel</div>
+        </section>
         <section className="six-about">
+          <div>
+            <h1>Universidad del Valle de Guatemala - [2020 - 2025]</h1>
+            <br />
+            <p>
+              Nunca olvidaré ese primer día de la Universidad, mis posibilidades
+              de entrar eran muy bajas a pesar de haber pasado el examen de
+              admisión y ortorgado un porcentaje de beca.
+            </p>
+            <p>
+              Pero gracias a mi persistencia y familia que me apoyaron y
+              confiaron en mí logré entrar a la Universidad y a la Carrera de
+              mis Sueños.
+            </p>
+            <br />
+            <p>
+              Hasta la fecha no he olvidado mis ideales, objetivos y sueños, me
+              mantengo fiel ante mis sueños y anhelos.
+            </p>
+            <br />
+            <p>
+              Cuando me aferro a algo que realmente quiero/anhelo no lo dejo
+              soltar con facilidad.
+            </p>
+          </div>
+        </section>
+        <section className="six-about-1">
+          <div>
+            <h2>Algunas actividades realizadas por el momento en UVG:</h2>
+          </div>
+        </section>
+        <section className="six-about-2">
+          {/* <div>IMplementar carrousels correspondientes</div> */}
+          <SliderCarousel data={Uvg} />
+        </section>
+        <section className="six-about-3">
+          <div>
+            <h2>
+              Laboratorios favoritos del Curso Sistemas y Tecnologías Web:
+            </h2>
+          </div>
+        </section>
+        <section className="six-about-4">
+          {/* <div>IMplementar carrousels correspondientes</div> */}
+          <SliderCarousel data={Web} />
+        </section>
+        <section className="seven-about">
           <Contact />
         </section>
       </div>

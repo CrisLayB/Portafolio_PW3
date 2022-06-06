@@ -5,6 +5,7 @@ const CardsOuter = () => {
     <>
       <div className="card-outer">
         <div className="container">
+          {/* Diseño y desarrollo de videojuegos */}
           <div className="card">
             <div className="face face1">
               <div className="content">
@@ -27,7 +28,7 @@ const CardsOuter = () => {
               </div>
             </div>
           </div>
-
+          {/* Desarrollo Web */}
           <div className="card">
             <div className="face face1">
               <div className="content">
@@ -49,7 +50,7 @@ const CardsOuter = () => {
               </div>
             </div>
           </div>
-
+          {/* Desarrollo Móvil */}
           <div className="card">
             <div className="face face1">
               <div className="content">

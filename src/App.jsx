@@ -18,6 +18,8 @@ import HeaderPortfolio from './HeaderPortafolio'
 import Portfolio from './Portfolio'
 import About from './About'
 
+import ScrollButton from './components/scrollButto/ScrollButton.jsx'
+
 const App = () => {
   return (
     <Routes>
@@ -27,6 +29,7 @@ const App = () => {
           <>
             <HeaderPortfolio />
             <Portfolio />
+            <ScrollButton />
           </>
         }
       ></Route>
@@ -36,6 +39,7 @@ const App = () => {
           <>
             <HeaderPortfolio />
             <About />
+            <ScrollButton />
           </>
         }
       ></Route>
