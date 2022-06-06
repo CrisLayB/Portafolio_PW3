@@ -1,0 +1,147 @@
+/*
+  Referencias:
+  https://www.youtube.com/watch?v=ShPPkZEeLPo
+*/
+
+.img-code {
+  width: 64px;
+  height: 64px;
+}
+
+.circular-nav {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: linear-gradient(45deg, black, red);
+}
+
+/*!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.menu1 {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu1 li {
+  position: absolute;
+  left: 2.5vh;
+  list-style: none;
+  transform-origin: 180px;
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+  transform: rotate(0deg) translateX(130px);
+}
+
+.menu1.active1 li {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.menu1 li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 85px;
+  background: #fff;
+  border-radius: 50%;
+  transform: rotate(calc(360deg / -8 * var(--i)));
+  color: black;
+  transition: 0.5s;
+}
+
+.menu1 li a:hover {
+  color: blue;
+}
+
+.toggle1 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  font-size: 2em;
+  transition: transform 1.25s;
+}
+
+.menu1.active1 .toggle1 {
+  transform: rotate(360deg);
+}
+
+/*!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.menu2 {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu2 li {
+  position: absolute;
+  left: 2.5vh;
+  list-style: none;
+  transform-origin: 180px;
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+  transform: rotate(0deg) translateX(130px);
+}
+
+.menu2.active2 li {
+  transform: rotate(calc(360deg / 8 * var(--i)));
+}
+
+.menu2 li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85px;
+  height: 85px;
+  background: #fff;
+  border-radius: 50%;
+  transform: rotate(calc(360deg / -8 * var(--i)));
+  color: black;
+  transition: 0.5s;
+}
+
+.menu2 li a:hover {
+  color: blue;
+}
+
+.toggle2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  font-size: 2em;
+  transition: transform 1.25s;
+}
+
+.menu2.active2 .toggle2 {
+  transform: rotate(360deg);
+}
+/*
+  Referencias:
+  https://www.youtube.com/watch?v=ShPPkZEeLPo
+*/

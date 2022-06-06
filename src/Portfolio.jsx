@@ -6,6 +6,7 @@ import './css/PageScroll.css'
 import Contact from './components/Contact.jsx'
 import CardsOuter from './components/cardsOuter/CardsOuter.jsx'
 import SliderCarousel from './components/slider/SliderCarousel.jsx'
+import CircularNav from './components/circular-nav/CircularNav.jsx'
 
 // Imagenes
 import ImgCodeWars from './img/img-code-wars1.png'
@@ -14,27 +15,11 @@ import ImgHackerRank from './img/img-hackerrank.png'
 // Data
 import Robotic from './data/robotic.js'
 
-/**
- * REFERENCIAS PARA LOS ICONOS DE LOS LENGUAJES Y FRAMEWORKS
- * <a href="https://www.flaticon.com/free-icons/c-sharp" title="c sharp icons">C sharp icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/python" title="python icons">Python icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/javascript" title="javascript icons">Javascript icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/java" title="java icons">Java icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/postgre" title="postgre icons">Postgre icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/letter-c" title="letter c icons">Letter c icons created by Hight Quality Icons - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/html-5" title="html 5 icons">Html 5 icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/css-3" title="css 3 icons">Css 3 icons created by Freepik - Flaticon</a>
- *
- * <a href="https://www.flaticon.com/free-icons/unity" title="unity icons">Unity icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/react" title="react icons">React icons created by Kiranshastry - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/photoshop" title="photoshop icons">Photoshop icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/nodejs" title="nodejs icons">Nodejs icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/postgre" title="postgre icons">Postgre icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/raspberry-pi" title="raspberry pi icons">Raspberry pi icons created by Freepik - Flaticon</a>
- *
- * <a href="https://www.flaticon.com/free-icons/code" title="code icons">Code icons created by Freepik - Flaticon</a>
- * <a href="https://www.flaticon.com/free-icons/toolbox" title="toolbox icons">Toolbox icons created by Freepik - Flaticon</a>
- */
+// Para los lenguajes y Herramientas
+import Code from './img/icons-tools/window.png'
+import LangCode from './data/lang-code'
+import Tools from './img/icons-tools/tool-box.png'
+import OtherTools from './data/other-tools'
 
 const Portfolio = () => {
   return (
@@ -144,20 +129,13 @@ const Portfolio = () => {
         <section className="nine">
           <div>
             <h1>Lenguajes de Programación</h1>
-            {/* <ul>
-              <li>C#</li>
-              <li>Python</li>
-              <li>JavaScript</li>
-              <li>C++</li>
-              <li>Java</li>
-              <li>C</li>
-              <li>Kotlin</li>
-            </ul> */}
+            <CircularNav MainIcon={Code} Data={LangCode} Number="1" />
           </div>
         </section>
         <section className="ten">
           <div>
             <h1>Herramientas y Frameworks</h1>
+            <CircularNav MainIcon={Tools} Data={OtherTools} Number="2" />
             {/* <ul>
               <li>Unity</li>
               <li>React</li>
