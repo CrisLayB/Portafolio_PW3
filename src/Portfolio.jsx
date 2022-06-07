@@ -1,3 +1,15 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologías Web - Sección 10
+ *
+ * Proyecto 3 - Portafolio Personal
+ *
+ * ! Portafolio : Página Principal Portafolio
+ *
+ * @author   Cristian Fernando Laynez Bachez - 201281
+ * @date     2-Junio-2022
+ */
+
 import { Link } from 'react-router-dom'
 
 import './css/PageScroll.css'
@@ -7,11 +19,11 @@ import Contact from './components/contact/Contact.jsx'
 import CardsOuter from './components/cardsOuter/CardsOuter.jsx'
 import SliderCarousel from './components/slider/SliderCarousel.jsx'
 import CircularNav from './components/circular-nav/CircularNav.jsx'
-import LetterNeon from './components/letter-neon/LetterNeon'
 
 // Imagenes
 import ImgCodeWars from './img/img-code-wars1.png'
 import ImgHackerRank from './img/img-hackerrank.png'
+import ImgMe from './img/cris_lay.jpg'
 
 // Data
 import Robotic from './data/robotic.js'
@@ -28,14 +40,15 @@ const Portfolio = () => {
       <div className="page-scroll">
         <section className="two">
           <div>
-            <LetterNeon field={'Cristian'} />
             <h1 className="name">Cristian Fernando Laynez Bachez</h1>
             <p className="sub-information">
               Ingeniero en Ciencias de la Computación
             </p>
-            <p className="sub-information">
+            <p className="sub-information h1-subtitle">
               Futuro Desarrollador de Videojuegos
             </p>
+            <br />
+            <img className="img-cris" src={ImgMe} alt="El Cristhian" />
           </div>
         </section>
         <section className="three">

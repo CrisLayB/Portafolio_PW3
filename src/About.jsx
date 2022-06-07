@@ -1,8 +1,21 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologías Web - Sección 10
+ *
+ * Proyecto 3 - Portafolio Personal
+ *
+ * ! About : Componente que se usará como página
+ *
+ * @author   Cristian Fernando Laynez Bachez - 201281
+ * @date     2-Junio-2022
+ */
+
 // Componentes
 import Contact from './components/contact/Contact.jsx'
 import SliderCarousel from './components/slider/SliderCarousel.jsx'
 
 // Data
+import Juba from './data/juba.js'
 import Uvg from './data/uvg.js'
 import Web from './data/web.js'
 
@@ -72,7 +85,7 @@ const About = () => {
           </div>
         </section>
         <section className="five-about-2">
-          <div>Implementar carrousel</div>
+          <SliderCarousel data={Juba} />
         </section>
         <section className="six-about">
           <div>

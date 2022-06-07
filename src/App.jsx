@@ -1,15 +1,17 @@
-// Referencias para esquemas para el portafolio
-// Para algunas animaciones
-// + https://youtu.be/c79C_S0E4IQ
-// Para maquetado y algunas funciones
-// + https://youtu.be/esC2k9z7w2U
-// + https://youtu.be/w8NSgfHfLug
+/**
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologías Web - Sección 10
+ *
+ * Proyecto 3 - Portafolio Personal
+ *
+ * ! App : App principal para la aplicación de React.
+ *
+ * @author   Cristian Fernando Laynez Bachez - 201281
+ * @date     2-Junio-2022
+ */
 
-// import { useState } from 'react'
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-
-// import logo from './icons/logo.svg'
 
 import './css/App.css'
 import './css/Styles.css'

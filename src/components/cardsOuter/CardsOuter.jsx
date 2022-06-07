@@ -1,3 +1,15 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologías Web - Sección 10
+ *
+ * Proyecto 3 - Portafolio Personal
+ *
+ * ! Cards Outer : Mostrar Cartas bonitas neon
+ *
+ * @author   Cristian Fernando Laynez Bachez - 201281
+ * @date     2-Junio-2022
+ */
+
 import './cardsOuter.css'
 
 const CardsOuter = () => {
@@ -5,11 +17,9 @@ const CardsOuter = () => {
     <>
       <div className="card-outer">
         <div className="container">
-          {/* Diseño y desarrollo de videojuegos */}
           <div className="card">
             <div className="face face1">
               <div className="content">
-                <i className="fab fa-windows"></i>
                 <h3 className="title-card">
                   Diseño y Desarrollo de Videojuegos
                 </h3>
@@ -32,7 +42,6 @@ const CardsOuter = () => {
           <div className="card">
             <div className="face face1">
               <div className="content">
-                <i className="fab fa-android"></i>{' '}
                 <h3 className="title-card">Desarrollo Web</h3>
               </div>
             </div>
@@ -54,7 +63,6 @@ const CardsOuter = () => {
           <div className="card">
             <div className="face face1">
               <div className="content">
-                <i className="fab fa-apple"></i>
                 <h3 className="title-card">Desarrollo Móvil</h3>
               </div>
             </div>

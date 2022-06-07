@@ -1,3 +1,15 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologías Web - Sección 10
+ *
+ * Proyecto 3 - Portafolio Personal
+ *
+ * ! Header Portafolio: Encabezado Principal
+ *
+ * @author   Cristian Fernando Laynez Bachez - 201281
+ * @date     2-Junio-2022
+ */
+
 import { Link } from 'react-router-dom'
 
 import './css/Header.css'

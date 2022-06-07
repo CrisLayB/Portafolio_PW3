@@ -1,3 +1,15 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologías Web - Sección 10
+ *
+ * Proyecto 3 - Portafolio Personal
+ *
+ * ! Circular Nav : Mostrar imagenes por medio de un nav de circulos
+ *
+ * @author   Cristian Fernando Laynez Bachez - 201281
+ * @date     2-Junio-2022
+ */
+
 import React from 'react'
 
 import './CircularNav.css'

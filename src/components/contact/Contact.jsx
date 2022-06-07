@@ -1,4 +1,16 @@
 /**
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologías Web - Sección 10
+ *
+ * Proyecto 3 - Portafolio Personal
+ *
+ * ! Contact : Mostrar medio de contacto hacia mi persona
+ *
+ * @author   Cristian Fernando Laynez Bachez - 201281
+ * @date     2-Junio-2022
+ */
+
+/**
  * GMAIL:
  * <a target="_blank" href="https://icons8.com/icon/38158/gmail-logo">Gmail logo</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
  *

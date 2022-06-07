@@ -1,3 +1,15 @@
+/**
+ * Universidad del Valle de Guatemala
+ * Sistemas y Tecnologías Web - Sección 10
+ *
+ * Proyecto 3 - Portafolio Personal
+ *
+ * ! Slider : Slider para mostrar páginas y un poco de información
+ *
+ * @author   Cristian Fernando Laynez Bachez - 201281
+ * @date     2-Junio-2022
+ */
+
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -45,7 +57,12 @@ const SliderCarousel = ({ data }) => {
       <Slider {...settings}>
         {data.map((d) => (
           <div>
-            <img className="img-game" src={d.img} alt={d.title} />
+            {d.type === 'mp4' && (
+              <video className="img-game" autoplay loop src={d.img}></video>
+            )}
+            {d.type !== 'mp4' && (
+              <img className="img-game" src={d.img} alt={d.title} />
+            )}
             <p>{d.description}</p>
             {d.page_url !== undefined && (
               <>

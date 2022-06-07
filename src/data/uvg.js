@@ -1,6 +1,7 @@
 import Img1 from '../img/uvg/Aplaudo.jpg'
 import Img2 from '../img/uvg/DIPLOMA HT-26.jpg'
 import Img3 from '../img/uvg/guate-find.jpg'
+import Img4 from '../img/uvg/mypet_and_me.jpg'
 
 const Uvg = [
   {
@@ -20,6 +21,12 @@ const Uvg = [
     title: 'victory-guate-find',
     description:
       'Al final de cuentas con mi equipo logramos ganar el primer lugar de la categoria de Ofertas Geolocalizadas.',
+  },
+  {
+    img: Img4,
+    title: 'my-pet-and-me',
+    description:
+      'Para el curso de Ing. Software estamos trabajando en un proyecto original, el cuál será un directorio de veterinarias para que la persona que tenga mascotas tenga una herramienta de emergencia por sí no encuentra una veterinaria en el momento más crítico.',
   },
 ]
 
