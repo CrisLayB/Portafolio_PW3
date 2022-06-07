@@ -32,9 +32,6 @@ const CardsOuter = () => {
                   Unity y C# son mis herramientas principales. También diseño
                   las mecanicas del juego y lo que tratará este mismo.
                 </p>
-                <a href="#" type="button">
-                  Ver Proyecto
-                </a>
               </div>
             </div>
           </div>
@@ -53,9 +50,6 @@ const CardsOuter = () => {
                   como backend (Node.js y Express) con React. Pero prefiero
                   estar al lado del backend si este lo requiere.
                 </p>
-                <a href="#" type="button">
-                  Ver Proyecto
-                </a>
               </div>
             </div>
           </div>
@@ -73,9 +67,6 @@ const CardsOuter = () => {
                   Actualmente suelo usar Android Studio tanto con Kotlin como
                   con Android para crear aplicaciones nativas de android.
                 </p>
-                <a href="#" type="button">
-                  Ver Proyecto
-                </a>
               </div>
             </div>
           </div>

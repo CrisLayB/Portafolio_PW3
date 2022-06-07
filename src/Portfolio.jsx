@@ -60,7 +60,7 @@ const Portfolio = () => {
             <br />
             <br />
             <br />
-            <Link to={'/about'}>
+            <Link to={'/201281/Portafolio/dist/about'}>
               <div className="btn-about">
                 <a className="btn-neon">
                   <span></span>

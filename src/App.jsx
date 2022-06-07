@@ -26,7 +26,7 @@ const App = () => {
   return (
     <Routes>
       <Route
-        path="/"
+        path="/201281/Portafolio/dist/"
         element={
           <>
             <HeaderPortfolio />
@@ -36,7 +36,7 @@ const App = () => {
         }
       ></Route>
       <Route
-        path="/about"
+        path="/201281/Portafolio/dist/about"
         element={
           <>
             <HeaderPortfolio />
