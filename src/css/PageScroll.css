@@ -1,3 +1,15 @@
+:root {
+  --red-medium: #ea4335;
+  --red-dark-light: #c5221f;
+  --blue-light: #21b8fc;
+  --blue-medium: #2196f3;
+  --blue-elegant-light: #1c3aa8;
+  --blue-elegant: #122874;
+  --blue-elegant-dark: #091533;
+  --yellow-soft: #fab005;
+  --green-medium: #85a805;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,11 +23,6 @@ section {
   align-items: center;
   scroll-snap-align: start;
 }
-/* .page-scroll {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-} */
 
 .habiltys {
   bottom: 10%;
@@ -23,6 +30,7 @@ section {
 
 .three {
   background: blue;
+  height: 60vh;
 }
 
 .four {
@@ -40,12 +48,13 @@ section {
 }
 
 .five {
-  background-color: aqua;
+  background-color: var(--blue-elegant);
   height: 50vh;
 }
 
 .six {
-  background-color: crimson;
+  background-color: var(--red-dark-light);
+  /* background-color: crimson; */
   height: 15vh;
 }
 
@@ -62,8 +71,43 @@ section {
 
 .seven {
   background: green;
+  height: 25vh;
 }
 
 .eight {
   background: #1c1d21;
+  height: 75vh;
+}
+
+.hr-langaugues {
+  height: 4px;
+  border-width: 0;
+  background-color: var(--red-medium);
+  box-shadow: 0 0 20px var(--red-medium), 0 0 40px var(--red-medium);
+}
+
+.nine {
+  height: 25vh;
+}
+
+/* ! Para el circular nav */
+.ninep {
+  height: 60vh;
+}
+
+.hr-tools {
+  height: 4px;
+  border-width: 0;
+  background-color: var(--blue-elegant-light);
+  box-shadow: 0 0 20px var(--blue-elegant-light),
+    0 0 40px var(--blue-elegant-light);
+}
+
+.ten {
+  height: 25vh;
+}
+
+/* ! Para el circular nav */
+.tenp {
+  height: 60vh;
 }

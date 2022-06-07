@@ -23,7 +23,12 @@ const CircularNav = ({ MainIcon, Data, Number }) => {
           </div>
           {Data.map((code) => (
             <li style={{ '--i': code.var }}>
-              <a href={code.ref_href} title={code.title}>
+              <a
+                className="btn-circle-neon"
+                href={code.ref_href}
+                target="_blank"
+                title={code.title}
+              >
                 <img src={code.img_code} alt=""></img>
               </a>
             </li>

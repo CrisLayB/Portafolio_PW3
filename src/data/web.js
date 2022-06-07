@@ -8,14 +8,14 @@ const Web = [
     img: Lab3,
     title: 'Laboratorio 3 - HTML Only',
     description:
-      'Como se indica solamente se utilizo HTML para narrar una historia, en mi caso llevé a cabo la historia de "Nelson el Ligador Otaku" una obra original creada por mi persona, me permití ser creativo para contar la historía de este personaje (Se recomienda discreción si vas a leer esta historia)',
+      'Como se indica solamente se utilizo HTML para narrar una historia, en mi caso llevé a cabo la historia de "Nelson el Ligador Otaku" una obra original creada por mi persona, me permití ser creativo para contar la historía de este personaje (Se recomienda discreción si vas a leer esta historia ya que me pase de creativo)',
     page_url: 'https://juanelcaballo.club/201281/Laboratorio3/lab03.html',
   },
   {
     img: Lab4,
     title: 'Laboratorio 4 - CSS Only',
     description:
-      'En este laboratorio llevé a cabo un dibujo CSS de la espada "the Bloodedge" de la saga de videojuegos "Blazblue"',
+      'En este laboratorio llevé a cabo un dibujo CSS de la espada "the Bloodedge". Proveniente de uno de mis juegos favoritos de pelea y anime "Blazblue"',
     page_url: 'https://juanelcaballo.club/201281/Laboratorio4/lab04.html',
   },
   {

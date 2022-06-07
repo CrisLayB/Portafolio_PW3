@@ -6,20 +6,24 @@ const HeaderPortfolio = () => {
   return (
     <>
       <nav className="header">
-        <Link to={'/'}>
-          {' '}
-          <h1 className="header-main">
-            <b>Cristian Laynez</b>
-          </h1>
-        </Link>
-
-        <ul className="header-right">
-          <Link to={'/about'}>
+        <div className="link-header-main">
+          <Link to={'/'}>
             {' '}
-            <h1 className="header-about">
-              <b>Más sobre mí</b>
+            <h1 className="header-main">
+              <b>Cristian Laynez</b>
             </h1>
           </Link>
+        </div>
+
+        <ul className="header-right">
+          <div className="link-header-about">
+            <Link to={'/about'}>
+              {' '}
+              <h1 className="header-about">
+                <b>Más sobre mí</b>
+              </h1>
+            </Link>
+          </div>
         </ul>
       </nav>
       <hr className="bar-gray"></hr>

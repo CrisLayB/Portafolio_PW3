@@ -23,3 +23,8 @@
 .slick-next::before {
   color: rgb(255, 0, 0);
 }
+
+.see-page {
+  color: white;
+  font-size: 18px;
+}

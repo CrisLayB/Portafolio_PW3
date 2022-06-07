@@ -1,19 +1,62 @@
+:root {
+  --red-medium: #ea4335;
+  --red-dark-light: #c5221f;
+  --blue-light: #21b8fc;
+  --blue-medium: #2196f3;
+  --blue-elegant-light: #1c3aa8;
+  --blue-elegant: #122874;
+  --blue-elegant-dark: #091533;
+  --green-light: #02ec19;
+  --green-medium: #85a805;
+}
+
 .header {
   overflow: hidden;
   padding: 20px 10px;
-  /* background-color: rgb(141, 11, 11); */
+}
+
+.header a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.link-header-main a:hover {
+  background: var(--red-dark-light);
+  box-shadow: 0 0 10px var(--red-dark-light), 0 0 40px var(--red-dark-light),
+    0 0 80px var(--red-dark-light);
+  transition-delay: 0.2s;
+  transition: 0.2s;
+}
+
+.link-header-about a:hover {
+  background: var(--blue-elegant-light);
+  box-shadow: 0 0 10px var(--blue-elegant-light),
+    0 0 40px var(--blue-elegant-light), 0 0 80px var(--blue-elegant-light);
+  transition-delay: 0.2s;
+  transition: 0.2s;
 }
 
 .header-right {
   float: right;
 }
 
+@media (max-width: 580px) {
+  .header-right {
+    float: left;
+  }
+}
+
+/* Para los titulos */
 .header-main {
   color: white;
   margin: 2.5rem;
+  font-size: 25px;
 }
 
 .header-about {
   color: white;
   margin: 2.5rem;
+  font-size: 25px;
 }

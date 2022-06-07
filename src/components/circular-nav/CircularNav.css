@@ -1,12 +1,33 @@
-/*
-  Referencias:
-  https://www.youtube.com/watch?v=ShPPkZEeLPo
-*/
+:root {
+  --red-medium: #ea4335;
+  --red-dark-light: #c5221f;
+  --blue-light: #21b8fc;
+  --blue-medium: #2196f3;
+  --blue-elegant-light: #1c3aa8;
+  --blue-elegant: #122874;
+  --blue-elegant-dark: #091533;
+  --yellow-soft: #fab005;
+  --green-medium: #85a805;
+}
 
 .img-code {
   width: 64px;
   height: 64px;
 }
+
+.btn-circle-neon:hover {
+  color: var(--blue-medium);
+  background: var(--blue-medium);
+  box-shadow: 0 0 10px var(--blue-medium), 0 0 40px var(--blue-medium),
+    0 0 80px var(--blue-medium);
+  transition-delay: 0.05s;
+}
+
+/*!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*
+  Referencias:
+  https://www.youtube.com/watch?v=ShPPkZEeLPo
+*/
 
 .circular-nav {
   margin: 0;
@@ -20,7 +41,6 @@
   background-color: linear-gradient(45deg, black, red);
 }
 
-/*!+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .menu1 {
   position: relative;
   width: 400px;
@@ -75,6 +95,14 @@
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
   font-size: 2em;
   transition: transform 1.25s;
+}
+
+.toggle1:hover {
+  color: var(--red-medium);
+  background: var(--red-medium);
+  box-shadow: 0 0 10px var(--red-medium), 0 0 40px var(--red-medium),
+    0 0 80px var(--red-medium);
+  transition-delay: 0.2s;
 }
 
 .menu1.active1 .toggle1 {
@@ -136,6 +164,14 @@
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
   font-size: 2em;
   transition: transform 1.25s;
+}
+
+.toggle2:hover {
+  color: var(--blue-elegant-light);
+  background: var(--blue-elegant-light);
+  box-shadow: 0 0 10px var(--blue-elegant-light),
+    0 0 40px var(--blue-elegant-light), 0 0 80px var(--blue-elegant-light);
+  transition-delay: 0.2s;
 }
 
 .menu2.active2 .toggle2 {

@@ -6,6 +6,19 @@ REFERENCIAS PARA EFECTOS NEON:
 + https://youtu.be/Q4ta_NZOYwE - CSS Energy Button Hover Effects
 + https://youtu.be/gCS4MSCF3Js - Top 20 neon effects css
 */
+
+:root {
+  --red-medium: #ea4335;
+  --red-dark-light: #c5221f;
+  --blue-light: #21b8fc;
+  --blue-medium: #2196f3;
+  --blue-elegant-light: #1c3aa8;
+  --blue-elegant: #122874;
+  --blue-elegant-dark: #091533;
+  --yellow-soft: #fab005;
+  --green-medium: #85a805;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -155,11 +168,12 @@ body {
   align-items: center;
 }
 
-a {
+.btn-neon {
   position: relative;
   display: inline-block;
   padding: 15px 30px;
-  color: #2196f3;
+  /* color: #2196f3; */
+  color: blue;
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration: none;
@@ -168,19 +182,19 @@ a {
   transition: 0.2s;
 }
 
-a:hover {
-  color: #255784;
+.btn-neon:hover {
+  color: #2196f3;
   background: #2196f3;
   box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
   transition-delay: 1s;
 }
 
-a span {
+.btn-neon span {
   position: absolute;
   display: block;
 }
 
-a span:nth-child(1) {
+.btn-neon span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -188,12 +202,12 @@ a span:nth-child(1) {
   background: linear-gradient(90deg, transparent, #2196f3);
 }
 
-a:hover span:nth-child(1) {
+.btn-neon:hover span:nth-child(1) {
   left: 100%;
   transition: 1s;
 }
 
-a span:nth-child(3) {
+.btn-neon span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -201,13 +215,13 @@ a span:nth-child(3) {
   background: linear-gradient(270deg, transparent, #2196f3);
 }
 
-a:hover span:nth-child(3) {
+.btn-neon:hover span:nth-child(3) {
   right: 100%;
   transition: 1s;
   transition-delay: 0.5s;
 }
 
-a span:nth-child(2) {
+.btn-neon span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -215,13 +229,13 @@ a span:nth-child(2) {
   background: linear-gradient(180deg, transparent, #2196f3);
 }
 
-a:hover span:nth-child(2) {
+.btn-neon:hover span:nth-child(2) {
   top: 100%;
   transition: 1s;
   transition-delay: 0.25s;
 }
 
-a span:nth-child(4) {
+.btn-neon span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;
@@ -229,7 +243,7 @@ a span:nth-child(4) {
   background: linear-gradient(360deg, transparent, #2196f3);
 }
 
-a:hover span:nth-child(4) {
+.btn-neon:hover span:nth-child(4) {
   bottom: 100%;
   transition: 1s;
   transition-delay: 0.75s;

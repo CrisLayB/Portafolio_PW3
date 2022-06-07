@@ -1,8 +1,48 @@
+:root {
+  --red-medium: #ea4335;
+  --red-dark-light: #c5221f;
+  --blue-light: #21b8fc;
+  --blue-medium: #2196f3;
+  --blue-elegant-light: #1c3aa8;
+  --blue-elegant: #122874;
+  --blue-elegant-dark: #091533;
+  --green-light: #02ec19;
+  --green-medium: #85a805;
+  --juba-green: #2f9548;
+  --juba-yellow: #c89f3a;
+  --uvg-green: #2f703f;
+  --uvg-yellow: #c29702;
+}
+
 .three-about {
-  background-color: blueb;
+  background-color: var(--blue-elegant);
 }
 
 .four-about {
-  background-color: blue;
+  /* background-color: black; */
   height: 15vh;
+}
+
+.five-about {
+  background-color: var(--juba-green);
+  height: 50vh;
+}
+
+.six-about {
+  background-color: var(--uvg-green);
+  height: 60vh;
+}
+
+.six-about-1 {
+  background-color: var(--uvg-yellow);
+  height: 25vh;
+}
+
+.six-about-3 {
+  background-color: var(--uvg-yellow);
+  height: 25vh;
+}
+
+.hobbies-list {
+  list-style-type: none;
 }

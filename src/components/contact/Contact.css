@@ -1,0 +1,32 @@
+:root {
+  --red-medium: #ea4335;
+  --red-dark-light: #c5221f;
+  --blue-light: #21b8fc;
+  --blue-medium: #2196f3;
+  --blue-elegant-light: #1c3aa8;
+  --blue-elegant: #122874;
+  --blue-elegant-dark: #091533;
+  --yellow-soft: #fab005;
+  --green-medium: #85a805;
+}
+
+.img-social-media {
+  margin: 2.5rem;
+  width: 100px;
+  height: 100px;
+}
+
+.a-social-media:hover {
+  color: white;
+  background: white;
+  box-shadow: 0 0 20px white, 0 0 40px white, 0 0 80px white;
+  transition-delay: 0.05s;
+}
+
+.hr-contact {
+  height: 4px;
+  border-width: 0;
+  background-color: var(--yellow-soft);
+  box-shadow: 0 0 20px var(--yellow-soft), 0 0 40px var(--yellow-soft),
+    0 0 80px var(--yellow-soft);
+}

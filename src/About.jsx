@@ -1,5 +1,5 @@
 // Componentes
-import Contact from './components/Contact.jsx'
+import Contact from './components/contact/Contact.jsx'
 import SliderCarousel from './components/slider/SliderCarousel.jsx'
 
 // Data
@@ -46,12 +46,12 @@ const About = () => {
         <section className="three-about">
           <div>
             <h1 className="slide-right">Hobbies</h1>
-            <ul>
-              <li>Jugar Videojuegos</li>
-              <li>Programar</li>
-              <li>Escuchar Música (especialmente de los 80's y 90's)</li>
-              <li>Mirar Anime</li>
-              <li>Jugar Deportes (Cuando tengo la oportunidad)</li>
+            <ul className="hobbies-list">
+              <li>🎮 Jugar Videojuegos 🎮</li>
+              <li>💻 Programar 💻</li>
+              <li>🎵 Escuchar Música 🎵 (especialmente de los 80's y 90's)</li>
+              <li>⚔ Mirar Anime ⚔</li>
+              <li>🤿 Jugar Deportes 🥊 (Cuando tengo la oportunidad)</li>
             </ul>
           </div>
         </section>
@@ -106,7 +106,6 @@ const About = () => {
           </div>
         </section>
         <section className="six-about-2">
-          {/* <div>IMplementar carrousels correspondientes</div> */}
           <SliderCarousel data={Uvg} />
         </section>
         <section className="six-about-3">
@@ -117,9 +116,9 @@ const About = () => {
           </div>
         </section>
         <section className="six-about-4">
-          {/* <div>IMplementar carrousels correspondientes</div> */}
           <SliderCarousel data={Web} />
         </section>
+        <hr className="hr-contact" />
         <section className="seven-about">
           <Contact />
         </section>

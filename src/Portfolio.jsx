@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 import './css/PageScroll.css'
 
 // Componentes
-import Contact from './components/Contact.jsx'
+import Contact from './components/contact/Contact.jsx'
 import CardsOuter from './components/cardsOuter/CardsOuter.jsx'
 import SliderCarousel from './components/slider/SliderCarousel.jsx'
 import CircularNav from './components/circular-nav/CircularNav.jsx'
+import LetterNeon from './components/letter-neon/LetterNeon'
 
 // Imagenes
 import ImgCodeWars from './img/img-code-wars1.png'
@@ -27,6 +28,7 @@ const Portfolio = () => {
       <div className="page-scroll">
         <section className="two">
           <div>
+            <LetterNeon field={'Cristian'} />
             <h1 className="name">Cristian Fernando Laynez Bachez</h1>
             <p className="sub-information">
               Ingeniero en Ciencias de la Computación
@@ -47,7 +49,7 @@ const Portfolio = () => {
             <br />
             <Link to={'/about'}>
               <div className="btn-about">
-                <a href="#">
+                <a className="btn-neon">
                   <span></span>
                   <span></span>
                   <span></span>
@@ -104,7 +106,10 @@ const Portfolio = () => {
             <br />
             <div className="flex-competitive-code">
               <div class="flex-item-left">
-                <a href="https://www.codewars.com/users/CL%20The%20Dreamer">
+                <a
+                  href="https://www.codewars.com/users/CL%20The%20Dreamer"
+                  target="_blank"
+                >
                   <img
                     className="img-competitive-code"
                     src={ImgCodeWars}
@@ -113,7 +118,10 @@ const Portfolio = () => {
                 </a>
               </div>
               <div class="flex-item-right">
-                <a href="https://www.hackerrank.com/cristianlaynezb1">
+                <a
+                  href="https://www.hackerrank.com/cristianlaynezb1"
+                  target="_blank"
+                >
                   <img
                     className="img-competitive-code"
                     src={ImgHackerRank}
@@ -126,27 +134,29 @@ const Portfolio = () => {
             <h1>La Programación Competitiva me interesa</h1>
           </div>
         </section>
+        <hr className="hr-langaugues" />
         <section className="nine">
           <div>
             <h1>Lenguajes de Programación</h1>
+          </div>
+        </section>
+        <section className="ninep">
+          <div>
             <CircularNav MainIcon={Code} Data={LangCode} Number="1" />
           </div>
         </section>
+        <hr className="hr-tools" />
         <section className="ten">
           <div>
             <h1>Herramientas y Frameworks</h1>
-            <CircularNav MainIcon={Tools} Data={OtherTools} Number="2" />
-            {/* <ul>
-              <li>Unity</li>
-              <li>React</li>
-              <li>PostgresSQL</li>
-              <li>Android Studio</li>
-              <li>Raspberry</li>
-              <li>Linux</li>
-              <li>Photoshop</li>
-            </ul> */}
           </div>
         </section>
+        <section className="tenp">
+          <div>
+            <CircularNav MainIcon={Tools} Data={OtherTools} Number="2" />
+          </div>
+        </section>
+        <hr className="hr-contact" />
         <section className="eleven">
           <Contact />
         </section>
