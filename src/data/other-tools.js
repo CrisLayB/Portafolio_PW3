@@ -20,57 +20,55 @@
  * <a href="https://www.flaticon.com/free-icons/toolbox" title="toolbox icons">Toolbox icons created by Freepik - Flaticon</a>
  */
 
-// import CSharp from '../../img/icons-tools/c-sharp.png'
-import Unity from '../img/icons-tools/unity.png'
-import React from '../img/icons-tools/physics.png'
-import PostgreSQL from '../img/icons-tools/postgre.png'
-import AndroidStudio from '../img/icons-tools/android.png'
-import Raspberry from '../img/icons-tools/raspberry-pi.png'
-import Photoshop from '../img/icons-tools/photoshop.png'
-import NodeJS from '../img/icons-tools/nodejs.png'
-
 const OtherTools = [
   {
     var: '0',
     ref_href: 'https://www.flaticon.com/free-icons/unity',
     title: 'unity icons',
-    img_code: Unity,
+    img_code:
+      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/unity.png',
   },
   {
     var: '1',
     ref_href: 'https://www.flaticon.com/free-icons/react',
     title: 'react icons',
-    img_code: React,
+    img_code:
+      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/physics.png',
   },
   {
     var: '2',
     ref_href: 'https://www.flaticon.com/free-icons/photoshop',
     title: 'photoshop icons',
-    img_code: PostgreSQL,
+    img_code:
+      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/photoshop.png',
   },
   {
     var: '3',
     ref_href: '',
-    title: '',
-    img_code: AndroidStudio,
+    title: 'android icons',
+    img_code:
+      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/android.png',
   },
   {
     var: '4',
     ref_href: 'https://www.flaticon.com/free-icons/raspberry-pi',
     title: 'raspberry pi icons',
-    img_code: Raspberry,
+    img_code:
+      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/raspberry-pi.png',
   },
   {
     var: '5',
     ref_href: 'https://www.flaticon.com/free-icons/photoshop',
-    title: 'photoshop icons',
-    img_code: Photoshop,
+    title: 'postgres icons',
+    img_code:
+      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/postgre.png',
   },
   {
     var: '6',
     ref_href: 'https://www.flaticon.com/free-icons/nodejs',
     title: 'nodejs icons',
-    img_code: NodeJS,
+    img_code:
+      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/nodejs.png',
   },
 ]
 

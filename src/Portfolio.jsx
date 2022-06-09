@@ -20,18 +20,9 @@ import CardsOuter from './components/cardsOuter/CardsOuter.jsx'
 import SliderCarousel from './components/slider/SliderCarousel.jsx'
 import CircularNav from './components/circular-nav/CircularNav.jsx'
 
-// Imagenes
-import ImgCodeWars from './img/img-code-wars1.png'
-import ImgHackerRank from './img/img-hackerrank.png'
-import ImgMe from './img/cris_lay.jpg'
-
 // Data
 import Robotic from './data/robotic.js'
-
-// Para los lenguajes y Herramientas
-import Code from './img/icons-tools/window.png'
 import LangCode from './data/lang-code'
-import Tools from './img/icons-tools/tool-box.png'
 import OtherTools from './data/other-tools'
 
 const Portfolio = () => {
@@ -48,7 +39,11 @@ const Portfolio = () => {
               Futuro Desarrollador de Videojuegos
             </p>
             <br />
-            <img className="img-cris" src={ImgMe} alt="El Cristhian" />
+            <img
+              className="img-cris"
+              src="https://juanelcaballo.club/201281/Portafolio/img/cris_lay.jpg"
+              alt="El Cristhian"
+            />
           </div>
         </section>
         <section className="three">
@@ -125,7 +120,7 @@ const Portfolio = () => {
                 >
                   <img
                     className="img-competitive-code"
-                    src={ImgCodeWars}
+                    src="https://juanelcaballo.club/201281/PortafolioImg/img/img-code-wars1.png"
                     alt="codewars"
                   />
                 </a>
@@ -137,7 +132,7 @@ const Portfolio = () => {
                 >
                   <img
                     className="img-competitive-code"
-                    src={ImgHackerRank}
+                    src="https://juanelcaballo.club/201281/PortafolioImg/img/img-hackerrank.png"
                     alt="hackerrank"
                   />
                 </a>
@@ -155,7 +150,11 @@ const Portfolio = () => {
         </section>
         <section className="ninep">
           <div>
-            <CircularNav MainIcon={Code} Data={LangCode} Number="1" />
+            <CircularNav
+              MainIcon="https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/window.png"
+              Data={LangCode}
+              Number="1"
+            />
           </div>
         </section>
         <hr className="hr-tools" />
@@ -166,7 +165,11 @@ const Portfolio = () => {
         </section>
         <section className="tenp">
           <div>
-            <CircularNav MainIcon={Tools} Data={OtherTools} Number="2" />
+            <CircularNav
+              MainIcon="https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/tool-box.png"
+              Data={OtherTools}
+              Number="2"
+            />
           </div>
         </section>
         <hr className="hr-contact" />

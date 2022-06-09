@@ -19,7 +19,7 @@ const HeaderPortfolio = () => {
     <>
       <nav className="header">
         <div className="link-header-main">
-          <Link to={'/201281/Portafolio/dist/'}>
+          <Link to={'/201281/portafolio/dist/'}>
             {' '}
             <h1 className="header-main">
               <b>Cristian Laynez</b>
@@ -29,7 +29,7 @@ const HeaderPortfolio = () => {
 
         <ul className="header-right">
           <div className="link-header-about">
-            <Link to={'/201281/Portafolio/dist/about'}>
+            <Link to={'/201281/portafolio/dist/about'}>
               {' '}
               <h1 className="header-about">
                 <b>Más sobre mí</b>
