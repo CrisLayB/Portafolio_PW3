@@ -29,8 +29,12 @@ section {
 }
 
 .three {
-  background: blue;
+  background: var(--blue-elegant-light);
   height: 60vh;
+}
+
+.three div p {
+  font-size: 18px;
 }
 
 .four {
@@ -54,7 +58,6 @@ section {
 
 .six {
   background-color: var(--red-dark-light);
-  /* background-color: crimson; */
   height: 15vh;
 }
 

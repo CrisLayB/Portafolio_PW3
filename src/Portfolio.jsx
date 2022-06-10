@@ -41,7 +41,7 @@ const Portfolio = () => {
             <br />
             <img
               className="img-cris"
-              src="https://juanelcaballo.club/201281/Portafolio/img/cris_lay.jpg"
+              src="https://juanelcaballo.club/201281/PortafolioImg/img/cris_lay.jpg"
               alt="El Cristhian"
             />
           </div>
