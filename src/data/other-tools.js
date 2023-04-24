@@ -18,57 +18,66 @@
  *
  * <a href="https://www.flaticon.com/free-icons/code" title="code icons">Code icons created by Freepik - Flaticon</a>
  * <a href="https://www.flaticon.com/free-icons/toolbox" title="toolbox icons">Toolbox icons created by Freepik - Flaticon</a>
+ * <a href="https://www.flaticon.com/free-icons/linux" title="linux icons">Linux icons created by Freepik - Flaticon</a>
  */
+
+import Unity from '../img/icons-tools/unity.png'
+import React from '../img/icons-tools/physics.png'
+import PostgreSQL from '../img/icons-tools/postgre.png'
+import AndroidStudio from '../img/icons-tools/android.png'
+import Raspberry from '../img/icons-tools/raspberry-pi.png'
+import Photoshop from '../img/icons-tools/photoshop.png'
+import NodeJS from '../img/icons-tools/nodejs.png'
+import Linux from '../img/icons-tools/linux.png'
 
 const OtherTools = [
   {
     var: '0',
     ref_href: 'https://www.flaticon.com/free-icons/unity',
     title: 'unity icons',
-    img_code:
-      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/unity.png',
+    img_code: Unity,
   },
   {
     var: '1',
     ref_href: 'https://www.flaticon.com/free-icons/react',
     title: 'react icons',
-    img_code:
-      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/physics.png',
+    img_code: React,
   },
   {
     var: '2',
     ref_href: 'https://www.flaticon.com/free-icons/photoshop',
     title: 'photoshop icons',
-    img_code:
-      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/photoshop.png',
+    img_code: PostgreSQL,
   },
   {
     var: '3',
     ref_href: '',
-    title: 'android icons',
-    img_code:
-      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/android.png',
+    title: '',
+    img_code: AndroidStudio,
   },
   {
     var: '4',
     ref_href: 'https://www.flaticon.com/free-icons/raspberry-pi',
     title: 'raspberry pi icons',
-    img_code:
-      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/raspberry-pi.png',
+    img_code: Raspberry,
   },
   {
     var: '5',
     ref_href: 'https://www.flaticon.com/free-icons/photoshop',
-    title: 'postgres icons',
-    img_code:
-      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/postgre.png',
+    title: 'photoshop icons',
+    img_code: Photoshop,
   },
   {
     var: '6',
     ref_href: 'https://www.flaticon.com/free-icons/nodejs',
     title: 'nodejs icons',
-    img_code:
-      'https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/nodejs.png',
+    img_code: NodeJS,
+  },
+  {
+    var: '7',
+    ref_href: 'https://www.flaticon.com/free-icons/linux',
+    title: 'linux icons',
+    img_code: Linux,
   },
 ]
 

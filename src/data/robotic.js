@@ -1,29 +1,30 @@
+import ImgRobotic1 from '../img/game-proyect/my-game-proyect.jpg'
+import ImgRobotic2 from '../img/game-proyect/my-game-proyect1.jpg'
+import ImgRobotic3 from '../img/game-proyect/my-game-proyect2.jpg'
+import ImgRobotic4 from '../img/game-proyect/my-game-proyect3.jpg'
+import ImgRobotic5 from '../img/game-proyect/my-game-proyect4.jpg'
+
 const Robotic = [
   {
-    img: 'https://juanelcaballo.club/201281/PortafolioImg/img/game-proyect/my-game-proyect1.jpg',
+    img: ImgRobotic1,
     title: 'robotic-img-2',
   },
   {
-    img: 'https://juanelcaballo.club/201281/PortafolioImg/img/game-proyect/my-game-proyect.jpg',
+    img: ImgRobotic2,
     title: 'robotic-img-1',
   },
   {
-    img: 'https://juanelcaballo.club/201281/PortafolioImg/img/game-proyect/my-game-proyect2.jpg',
+    img: ImgRobotic3,
     title: 'robotic-img-3',
   },
   {
-    img: 'https://juanelcaballo.club/201281/PortafolioImg/img/game-proyect/my-game-proyect3.jpg',
+    img: ImgRobotic4,
     title: 'robotic-img-4',
   },
   {
-    img: 'https://juanelcaballo.club/201281/PortafolioImg/img/game-proyect/my-game-proyect4.jpg',
+    img: ImgRobotic5,
     title: 'robotic-img-5',
-  },
-  {
-    img: 'https://juanelcaballo.club/201281/PortafolioImg/img/game-proyect/muestra-robotic.mp4',
-    title: 'robotic-video',
-    type: 'mp4',
-  },
+  }
 ]
 
 export default Robotic

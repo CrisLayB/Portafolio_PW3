@@ -20,10 +20,19 @@ import CardsOuter from './components/cardsOuter/CardsOuter.jsx'
 import SliderCarousel from './components/slider/SliderCarousel.jsx'
 import CircularNav from './components/circular-nav/CircularNav.jsx'
 
+// Imagenes
+import ImgCodeWars from './img/img-code-wars1.png'
+import ImgHackerRank from './img/img-hackerrank.png'
+import ImgMe from './img/cris_lay.jpg'
+
 // Data
 import Robotic from './data/robotic.js'
 import LangCode from './data/lang-code'
 import OtherTools from './data/other-tools'
+
+// Para los lenguajes y Herramientas
+import Code from './img/icons-tools/window.png'
+import Tools from './img/icons-tools/tool-box.png'
 
 const Portfolio = () => {
   return (
@@ -33,7 +42,7 @@ const Portfolio = () => {
           <div>
             <h1 className="name">Cristian Fernando Laynez Bachez</h1>
             <p className="sub-information">
-              Ingeniero en Ciencias de la Computación
+              Ingeniero en Ciencias de la Computación y TI
             </p>
             <p className="sub-information h1-subtitle">
               Futuro Desarrollador de Videojuegos
@@ -41,7 +50,7 @@ const Portfolio = () => {
             <br />
             <img
               className="img-cris"
-              src="https://juanelcaballo.club/201281/PortafolioImg/img/cris_lay.jpg"
+              src={ImgMe}
               alt="El Cristhian"
             />
           </div>
@@ -120,7 +129,7 @@ const Portfolio = () => {
                 >
                   <img
                     className="img-competitive-code"
-                    src="https://juanelcaballo.club/201281/PortafolioImg/img/img-code-wars1.png"
+                    src={ImgCodeWars}
                     alt="codewars"
                   />
                 </a>
@@ -132,7 +141,7 @@ const Portfolio = () => {
                 >
                   <img
                     className="img-competitive-code"
-                    src="https://juanelcaballo.club/201281/PortafolioImg/img/img-hackerrank.png"
+                    src={ImgHackerRank}
                     alt="hackerrank"
                   />
                 </a>
@@ -151,7 +160,7 @@ const Portfolio = () => {
         <section className="ninep">
           <div>
             <CircularNav
-              MainIcon="https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/window.png"
+              MainIcon={Code}
               Data={LangCode}
               Number="1"
             />
@@ -166,7 +175,7 @@ const Portfolio = () => {
         <section className="tenp">
           <div>
             <CircularNav
-              MainIcon="https://juanelcaballo.club/201281/PortafolioImg/img/icons-tools/tool-box.png"
+              MainIcon={Tools}
               Data={OtherTools}
               Number="2"
             />

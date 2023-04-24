@@ -12,6 +12,7 @@
 
 import IconGmail from '../../icons/icons8-gmail-logo-150.png'
 import IconLinkedin from '../../icons/icons8-linkedin-128.png'
+import IconGitHub from '../../icons/icons8-github-150.png'
 
 import './Contact.css'
 
@@ -26,17 +27,21 @@ const Contact = () => {
           target="_blank"
           href="mailto:cristianlaynezbachez@gmail.co,"
         >
-          <img className="img-social-media" src={IconGmail} alt="gmail"></img>
+          <img 
+            className="img-social-media" 
+            src={IconGmail} 
+            alt="gmail"
+          ></img>
         </a>
         <a
           className="a-social-media"
           target="_blank"
-          href="https://github.com/CRLB-sketch"
+          href="https://github.com/CrisLayB"
         >
           <img
             className="img-social-media"
-            src="https://juanelcaballo.club/201281/PortafolioImg/icons/icons8-github-150.png"
-            alt="git-hub"
+            src={IconGitHub}
+            alt="linkedin"
           ></img>
         </a>
         <a
