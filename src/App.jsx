@@ -26,7 +26,7 @@ const App = () => {
   return (
     <Routes>
       <Route
-        path="/vite-deploy/Portafolio_PW3/"
+        path="/Portafolio_PW3/"
         element={
           <>
             <HeaderPortfolio />
@@ -36,7 +36,7 @@ const App = () => {
         }
       ></Route>
       <Route
-        path="/vite-deploy/Portafolio_PW3/about"
+        path="/Portafolio_PW3/about"
         element={
           <>
             <HeaderPortfolio />

@@ -19,7 +19,7 @@ const HeaderPortfolio = () => {
     <>
       <nav className="header">
         <div className="link-header-main">
-          <Link to={'/vite-deploy/Portafolio_PW3/'}>
+          <Link to={'/Portafolio_PW3/'}>
             {' '}
             <h1 className="header-main">
               <b>Cristian Laynez</b>
@@ -29,7 +29,7 @@ const HeaderPortfolio = () => {
 
         <ul className="header-right">
           <div className="link-header-about">
-            <Link to={'/vite-deploy/Portafolio_PW3/about'}>
+            <Link to={'/Portafolio_PW3/about'}>
               {' '}
               <h1 className="header-about">
                 <b>Más sobre mí</b>
