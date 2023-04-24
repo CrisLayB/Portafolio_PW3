@@ -42,10 +42,10 @@ const Portfolio = () => {
           <div>
             <h1 className="name">Cristian Fernando Laynez Bachez</h1>
             <p className="sub-information">
-              Ingeniero en Ciencias de la Computación y TI
+              Desarrollador de Software Full Stack
             </p>
             <p className="sub-information h1-subtitle">
-              Futuro Desarrollador de Videojuegos
+              Diseñador y Desarrollador de Videojuegos Junior
             </p>
             <br />
             <img
@@ -58,13 +58,13 @@ const Portfolio = () => {
         <section className="three">
           <div>
             <p>Actualmente estoy estudiando Ingenieria en Ciencias de la</p>
-            <p>Computación en la Universidad del Valle de Guatemala.</p>
+            <p>Computación y TI en la Universidad del Valle de Guatemala.</p>
             <p>Soy una persona con hambre de conocimiento y que busca</p>
             <p>superarse en las metas/objetivos que se propone.</p>
             <br />
             <br />
             <br />
-            <Link to={'/201281/Portafolio/dist/about'}>
+            <Link to={'/Portafolio_PW3/about'}>
               <div className="btn-about">
                 <a className="btn-neon">
                   <span></span>
@@ -155,6 +155,8 @@ const Portfolio = () => {
         <section className="nine">
           <div>
             <h1>Lenguajes de Programación</h1>
+            <br></br>
+            <p>Presiona/dale click al icono 👀</p>
           </div>
         </section>
         <section className="ninep">
@@ -170,6 +172,8 @@ const Portfolio = () => {
         <section className="ten">
           <div>
             <h1>Herramientas y Frameworks</h1>
+            <br></br>
+            <p>Presiona/dale click al icono 👀</p>
           </div>
         </section>
         <section className="tenp">

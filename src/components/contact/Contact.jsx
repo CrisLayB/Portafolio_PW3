@@ -25,7 +25,7 @@ const Contact = () => {
         <a
           className="a-social-media"
           target="_blank"
-          href="mailto:cristianlaynezbachez@gmail.co,"
+          href="mailto:cristianlaynezbachez@gmail.com"
         >
           <img 
             className="img-social-media" 

@@ -27,8 +27,8 @@ const About = () => {
       <div className="page-scroll">
         <section className="one-about">
           <div>
-            <p>Hola! Soy Cristian Laynez</p>
-            <h1>Ingeniero en Ciencias de la Computación</h1>
+            <h1>Hola! Soy Cristian Laynez</h1>
+            <br></br>
             <p>
               Soy de Guatemala, actualmente estoy en tercer año de Ingenieria en
               Ciencias de la Computación
