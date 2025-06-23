@@ -1,0 +1,218 @@
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Contact } from "../components";
+import { gamesData, backgroundImages, gameStats } from '../data/games-data';
+
+// Import your CSS file
+import '../css/GamesPage.css';
+
+export const Games = () => {
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+  const [selectedFilter, setSelectedFilter] = useState('all');
+
+  // Auto-rotate background images every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // Filter games based on selection
+  const filteredGames = selectedFilter === 'all' 
+    ? gamesData 
+    : selectedFilter === 'featured'
+    ? gamesData.filter(game => game.featured)
+    : gamesData.filter(game => game.status.toLowerCase() === selectedFilter);
+
+  const getStatusColor = (status) => {
+    switch (status.toLowerCase()) {
+      case 'in development': return '#ffa500';
+      case 'released': return '#4caf50';
+      case 'completed': return '#2196f3';
+      case 'prototype': return '#9c27b0';
+      case 'paused': return 'red';
+      default: return '#666';
+    }
+  };
+
+  // Enhanced grid class based on number of games
+  const getGridClass = () => {
+    const gameCount = filteredGames.length;
+    if (gameCount === 0) return 'games-grid empty';
+    if (gameCount === 1) return 'games-grid single';
+    if (gameCount === 2) return 'games-grid double';
+    if (gameCount === 3) return 'games-grid triple';
+    if (gameCount === 4) return 'games-grid quad';
+    if (gameCount <= 6) return 'games-grid medium';
+    return 'games-grid large';
+  };
+
+  // Enhanced section class for dynamic height calculation
+  const getSectionClass = () => {
+    const gameCount = filteredGames.length;
+    if (gameCount === 0) return 'games-grid-section empty';
+    if (gameCount === 1) return 'games-grid-section single-game';
+    if (gameCount === 2) return 'games-grid-section double-games';
+    if (gameCount === 3) return 'games-grid-section triple-games';
+    if (gameCount === 4) return 'games-grid-section quad-games';
+    if (gameCount <= 6) return 'games-grid-section medium-games';
+    return 'games-grid-section large-games';
+  };
+
+  // Calculate approximate rows for better height estimation
+  const getEstimatedRows = () => {
+    const gameCount = filteredGames.length;
+    // This will be used by CSS for dynamic height calculation
+    return Math.ceil(gameCount / 3); // Assuming 3 columns on desktop
+  };
+
+  return (
+    <div className="App">
+      <div className="page-scroll">
+        {/* Hero Section with Background Carousel */}
+        <section className="games-hero">
+          <div className="games-bg-carousel">
+            {backgroundImages.map((img, index) => (
+              <div
+                key={index}
+                className={`bg-slide ${index === currentBgIndex ? 'active' : ''}`}
+                style={{ backgroundImage: `url(${img})` }}
+              />
+            ))}
+            <div className="bg-overlay"></div>
+          </div>
+          
+          <div className="games-hero-content">
+            <h1 className="games-hero-title">Game Development Portfolio</h1>
+            <p className="games-hero-description">
+              My specialty is video game development and I've had the opportunity to create games 
+              in <span className="highlight">hackathons</span>, <span className="highlight">personal projects</span>, 
+              <span className="highlight"> university projects</span>, and even as part of a 
+              <span className="highlight"> startup studio</span>. I'm always open to new 
+              <span className="highlight"> collaborations</span> and exciting game development challenges.
+            </p>
+            <div className="games-stats">
+              <div className="stat">
+                <span className="stat-number">{gameStats.totalGames}+</span>
+                <span className="stat-label">Games Created</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">{gameStats.yearsExperience}+</span>
+                <span className="stat-label">Years Experience</span>
+              </div>
+              <div className="stat">
+                <span className="stat-number">{gameStats.studiosCreated}</span>
+                <span className="stat-label">Studio Founded</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Filter Section */}
+        <section className="games-filter">
+          <div className="filter-container">
+            <h2>Explore My Games</h2>
+            <div className="filter-buttons">
+              <button 
+                className={`filter-btn ${selectedFilter === 'all' ? 'active' : ''}`}
+                onClick={() => setSelectedFilter('all')}
+              >
+                All Games ({gamesData.length})
+              </button>
+              <button 
+                className={`filter-btn ${selectedFilter === 'featured' ? 'active' : ''}`}
+                onClick={() => setSelectedFilter('featured')}
+              >
+                Featured ({gamesData.filter(game => game.featured).length})
+              </button>
+              <button 
+                className={`filter-btn ${selectedFilter === 'in development' ? 'active' : ''}`}
+                onClick={() => setSelectedFilter('in development')}
+              >
+                In Development ({gamesData.filter(game => game.status.toLowerCase() === 'in development').length})
+              </button>
+              <button 
+                className={`filter-btn ${selectedFilter === 'released' ? 'active' : ''}`}
+                onClick={() => setSelectedFilter('released')}
+              >
+                Released ({gamesData.filter(game => game.status.toLowerCase() === 'released').length})
+              </button>
+              <button 
+                className={`filter-btn ${selectedFilter === 'completed' ? 'active' : ''}`}
+                onClick={() => setSelectedFilter('completed')}
+              >
+                Completed ({gamesData.filter(game => game.status.toLowerCase() === 'completed').length})
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Games Grid with Dynamic Height */}
+        <section 
+          className={getSectionClass()}
+          data-game-count={filteredGames.length}
+          data-estimated-rows={getEstimatedRows()}
+        >
+          {filteredGames.length === 0 ? (
+            <div className="no-games-message">
+              <h3>No games found</h3>
+              <p>Try selecting a different filter to see more games.</p>
+            </div>
+          ) : (
+            <div className={getGridClass()}>
+              {filteredGames.map((game) => (
+                <div key={game.id} className="game-card">
+                  <div className="game-card-image">
+                    <img src={game.coverImage} alt={game.title} />
+                    <div className="game-card-overlay">
+                      <Link to={game.link} className="play-button">
+                        <span>View Details</span>
+                      </Link>
+                    </div>
+                    <div className="game-status" style={{ backgroundColor: getStatusColor(game.status) }}>
+                      {game.status}
+                    </div>
+                  </div>
+                  
+                  <div className="game-card-content">
+                    <h3 className="game-title">{game.title}</h3>
+                    <p className="game-subtitle">{game.subtitle}</p>
+                    <p className="game-description">{game.description}</p>
+                    
+                    <div className="game-meta">
+                      <div className="game-info">
+                        <span className="game-category">{game.category}</span>
+                        <span className="game-year">{game.year}</span>
+                      </div>
+                      <div className="game-platform">{game.platform}</div>
+                    </div>
+                    
+                    <div className="game-tech">
+                      {game.technologies.map((tech, index) => (
+                        <span key={index} className="tech-tag">{tech}</span>
+                      ))}
+                    </div>
+                    
+                    {/* <div className="game-footer">
+                      <span className="game-team">{game.team}</span>
+                      <Link to={game.link} className="game-link">
+                        Explore Game →
+                      </Link>
+                    </div> */}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
+
+        <hr className="hr-contact" />
+        <section className="eleven">
+          <Contact />
+        </section>
+      </div>
+    </div>
+  );
+};

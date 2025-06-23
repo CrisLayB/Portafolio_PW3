@@ -1,0 +1,461 @@
+/* Hero Section Styles */
+.hero-section {
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shooting Stars Animation */
+.shooting-stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #fff;
+  animation: shooting 3s linear infinite;
+}
+
+.star:nth-child(1) {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 3s;
+}
+
+.star:nth-child(2) {
+  top: 20%;
+  left: 20%;
+  animation-delay: 0.5s;
+  animation-duration: 2.5s;
+}
+
+.star:nth-child(3) {
+  top: 30%;
+  left: 30%;
+  animation-delay: 1s;
+  animation-duration: 3.5s;
+}
+
+.star:nth-child(4) {
+  top: 40%;
+  left: 40%;
+  animation-delay: 1.5s;
+  animation-duration: 2s;
+}
+
+.star:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  animation-delay: 2s;
+  animation-duration: 4s;
+}
+
+.star:nth-child(6) {
+  top: 60%;
+  left: 60%;
+  animation-delay: 2.5s;
+  animation-duration: 2.8s;
+}
+
+.star:nth-child(7) {
+  top: 70%;
+  left: 70%;
+  animation-delay: 3s;
+  animation-duration: 3.2s;
+}
+
+.star:nth-child(8) {
+  top: 80%;
+  left: 80%;
+  animation-delay: 3.5s;
+  animation-duration: 2.2s;
+}
+
+.star:nth-child(9) {
+  top: 15%;
+  left: 80%;
+  animation-delay: 4s;
+  animation-duration: 3.8s;
+}
+
+.star:nth-child(10) {
+  top: 85%;
+  left: 15%;
+  animation-delay: 4.5s;
+  animation-duration: 2.6s;
+}
+
+@keyframes shooting {
+  0% {
+    transform: translateX(-100px) translateY(-100px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(-50px) translateY(-50px) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translateX(300px) translateY(300px) scale(1);
+  }
+  100% {
+    transform: translateX(400px) translateY(400px) scale(0);
+    opacity: 0;
+  }
+}
+
+/* Main Container */
+.hero-container {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 4rem;
+  max-width: 1400px;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-image {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid var(--blue-medium);
+  box-shadow: 
+    0 0 20px rgba(33, 184, 252, 0.3),
+    0 0 40px rgba(33, 184, 252, 0.2),
+    inset 0 0 20px rgba(33, 184, 252, 0.1);
+  transition: all 0.5s ease;
+  animation: profileGlow 3s ease-in-out infinite alternate;
+}
+
+.profile-image:hover {
+  transform: scale(1.02);
+  box-shadow: 
+    0 0 30px rgba(33, 184, 252, 0.5),
+    0 0 60px rgba(33, 184, 252, 0.3),
+    inset 0 0 30px rgba(33, 184, 252, 0.2);
+}
+
+@keyframes profileGlow {
+  from {
+    box-shadow: 
+      0 0 20px rgba(33, 184, 252, 0.3),
+      0 0 40px rgba(33, 184, 252, 0.2),
+      inset 0 0 20px rgba(33, 184, 252, 0.1);
+  }
+  to {
+    box-shadow: 
+      0 0 25px rgba(33, 184, 252, 0.4),
+      0 0 50px rgba(33, 184, 252, 0.3),
+      inset 0 0 25px rgba(33, 184, 252, 0.15);
+  }
+}
+
+.image-frame {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  background: linear-gradient(45deg, var(--blue-medium), transparent, var(--blue-medium));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: frameRotate 4s linear infinite;
+}
+
+@keyframes frameRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Image Indicators */
+.image-indicators {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+}
+
+.image-indicators .indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.image-indicators .indicator.active {
+  background: var(--blue-medium);
+  box-shadow: 0 0 10px rgba(33, 184, 252, 0.5);
+}
+
+.image-indicators .indicator:hover {
+  background: rgba(33, 184, 252, 0.7);
+}
+
+/* Info Section */
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: white;
+}
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--red-medium);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.hero-welcome {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.roles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.role {
+  font-size: 1.1rem;
+  color: #c0c0c0;
+  margin: 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.role::before {
+  content: "•";
+  color: var(--blue-medium);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* News Carousel */
+.news-carousel {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.news-carousel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(33, 184, 252, 0.05), transparent);
+  animation: newsShimmer 3s infinite;
+}
+
+@keyframes newsShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.news-item {
+  position: relative;
+  z-index: 2;
+}
+
+.news-title {
+  font-size: 1.3rem;
+  color: var(--blue-light);
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.news-description {
+  font-size: 1rem;
+  color: #d0d0d0;
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+.news-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.news-date {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.news-link {
+  color: var(--blue-medium);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.news-link:hover {
+  color: var(--blue-light);
+  text-shadow: 0 0 5px rgba(33, 184, 252, 0.5);
+}
+
+/* News Indicators */
+.news-indicators {
+  display: flex;
+  gap: 6px;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.news-indicators .indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.news-indicators .indicator.active {
+  background: var(--blue-medium);
+  box-shadow: 0 0 8px rgba(33, 184, 252, 0.5);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .hero-container {
+    grid-template-columns: 350px 1fr;
+    gap: 3rem;
+  }
+  
+  .profile-image {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .hero-name {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .profile-image {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .hero-name {
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding: 1.5rem;
+  }
+  
+  .hero-container {
+    gap: 2rem;
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .hero-name {
+    font-size: 2rem;
+  }
+  
+  .hero-welcome {
+    font-size: 1.1rem;
+  }
+  
+  .role {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-section {
+    padding: 1rem;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .hero-name {
+    font-size: 1.8rem;
+  }
+  
+  .hero-welcome {
+    font-size: 1rem;
+  }
+  
+  .news-carousel {
+    padding: 1rem;
+  }
+  
+  .news-title {
+    font-size: 1.1rem;
+  }
+  
+  .news-description {
+    font-size: 0.9rem;
+  }
+}

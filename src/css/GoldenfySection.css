@@ -1,0 +1,365 @@
+:root {
+  --golden: #d4af37;
+  --golden-light: #f4e4a6;
+}
+
+/* Goldenfy Studios Header Section */
+.goldenfy-header {
+  background: linear-gradient(135deg, var(--golden) 0%, #e8b923 50%, var(--golden-light) 100%);
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.goldenfy-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.goldenfy-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  z-index: 2;
+  position: relative;
+}
+
+/* Main Goldenfy Content Section */
+.goldenfy-content {
+  background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+.goldenfy-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+.goldenfy-logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.goldenfy-logo {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--golden) 0%, #e8b923 50%, var(--golden-light) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 
+              0 0 60px rgba(212, 175, 55, 0.3),
+              inset 0 0 30px rgba(255,255,255,0.2);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 0 60px rgba(212, 175, 55, 0.3), inset 0 0 30px rgba(255,255,255,0.2); }
+  to { box-shadow: 0 0 40px rgba(212, 175, 55, 0.8), 0 0 80px rgba(212, 175, 55, 0.5), inset 0 0 40px rgba(255,255,255,0.3); }
+}
+
+.goldenfy-logo-img {
+  width: 600px;
+  height: 600px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+  transition: all 0.3s ease;
+}
+
+.goldenfy-logo:hover .goldenfy-logo-img {
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.8));
+  transform: scale(1.05);
+}
+
+.goldenfy-text {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.goldenfy-brand {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, var(--golden), var(--golden-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.goldenfy-subtitle {
+  font-size: 1.2rem;
+  color: var(--golden-light);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.goldenfy-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.startup-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--golden);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.startup-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+/* Learn More Button Styling - Enhanced version of your existing btn-neon */
+.btn-learn-more {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.btn-neon {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: var(--golden);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  margin-right: 50px;
+  border: 2px solid var(--golden);
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-neon:hover {
+  background: var(--golden);
+  color: #000;
+  box-shadow: 0 0 5px var(--golden),
+              0 0 25px var(--golden),
+              0 0 50px var(--golden),
+              0 0 200px var(--golden);
+}
+
+.btn-neon span {
+  position: absolute;
+  display: block;
+}
+
+.btn-neon span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--golden));
+  animation: animate1 1s linear infinite;
+}
+
+.btn-neon span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, var(--golden));
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+.btn-neon span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, var(--golden));
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.50s;
+}
+
+.btn-neon span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, var(--golden));
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate1 {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+@keyframes animate2 {
+  0% { top: -100%; }
+  50%, 100% { top: 100%; }
+}
+
+@keyframes animate3 {
+  0% { right: -100%; }
+  50%, 100% { right: 100%; }
+}
+
+@keyframes animate4 {
+  0% { bottom: -100%; }
+  50%, 100% { bottom: 100%; }
+}
+
+.text-learn-more {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  z-index: 1;
+  position: relative;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .goldenfy-container {
+    gap: 3rem;
+  }
+  
+  .goldenfy-logo {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .goldenfy-logo-img {
+    width: 170px;
+    height: 170px;
+  }
+  
+  .startup-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .goldenfy-content {
+    min-height: 100vh;
+    padding: 1.5rem;
+  }
+  
+  .goldenfy-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .goldenfy-info {
+    align-items: center;
+  }
+  
+  .startup-description {
+    text-align: center;
+  }
+  
+  .goldenfy-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .goldenfy-content {
+    padding: 1rem;
+  }
+  
+  .goldenfy-logo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .goldenfy-logo-img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .goldenfy-brand {
+    font-size: 2rem;
+  }
+  
+  .startup-title {
+    font-size: 2rem;
+  }
+  
+  .startup-description {
+    font-size: 1.1rem;
+  }
+  
+  .goldenfy-header h1 {
+    font-size: 2rem;
+  }
+  
+  .btn-neon {
+    padding: 12px 25px;
+    letter-spacing: 2px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .goldenfy-header {
+    height: 20vh;
+  }
+  
+  .goldenfy-logo {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .startup-title {
+    font-size: 1.8rem;
+  }
+  
+  .startup-description {
+    font-size: 1rem;
+  }
+  
+  .goldenfy-brand {
+    font-size: 1.8rem;
+  }
+  
+  .goldenfy-subtitle {
+    font-size: 1rem;
+  }
+}

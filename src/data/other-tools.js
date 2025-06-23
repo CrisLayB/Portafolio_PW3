@@ -21,16 +21,16 @@
  * <a href="https://www.flaticon.com/free-icons/linux" title="linux icons">Linux icons created by Freepik - Flaticon</a>
  */
 
-import Unity from '../img/icons-tools/unity.png'
+import Blender from '../img/icons-tools/blender.png'
+import GoogleCloud from '../img/icons-tools/google-cloud.png'
+import Linux from '../img/icons-tools/linux.png'
+import NodeJS from '../img/icons-tools/nodejs.png'
+import Photoshop from '../img/icons-tools/photoshop.png'
 import React from '../img/icons-tools/physics.png'
 import PostgreSQL from '../img/icons-tools/postgre.png'
-import AndroidStudio from '../img/icons-tools/android.png'
-import Raspberry from '../img/icons-tools/raspberry-pi.png'
-import Photoshop from '../img/icons-tools/photoshop.png'
-import NodeJS from '../img/icons-tools/nodejs.png'
-import Linux from '../img/icons-tools/linux.png'
+import Unity from '../img/icons-tools/unity.png'
 
-const OtherTools = [
+export const OtherTools = [
   {
     var: '0',
     ref_href: 'https://www.flaticon.com/free-icons/unity',
@@ -51,15 +51,15 @@ const OtherTools = [
   },
   {
     var: '3',
-    ref_href: '',
-    title: '',
-    img_code: AndroidStudio,
+    ref_href: 'https://www.flaticon.com/free-icons/google-cloud',
+    title: 'google-cloud icons',
+    img_code: GoogleCloud,
   },
   {
     var: '4',
-    ref_href: 'https://www.flaticon.com/free-icons/raspberry-pi',
-    title: 'raspberry pi icons',
-    img_code: Raspberry,
+    ref_href: '',
+    title: 'blender icon',
+    img_code: Blender,
   },
   {
     var: '5',
@@ -80,5 +80,3 @@ const OtherTools = [
     img_code: Linux,
   },
 ]
-
-export default OtherTools

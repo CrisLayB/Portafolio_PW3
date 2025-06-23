@@ -16,7 +16,7 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import './SliderCarousel.css'
 
-const SliderCarousel = ({ data }) => {
+export const SliderCarousel = ({ data }) => {
   const settings = {
     dots: true,
     infinite: false,
@@ -55,19 +55,19 @@ const SliderCarousel = ({ data }) => {
   return (
     <div className="slider-carousel">
       <Slider {...settings}>
-        {data.map((d) => (
-          <div>
+        {data.map((d, index) => (
+          <div key={index}>
             {d.type === 'mp4' && (
-              <video className="img-game" autoplay loop src={d.img}></video>
+              <video className="img-game" autoPlay loop src={d.img}>
+                <track kind="captions" />
+              </video>
             )}
-            {d.type !== 'mp4' && (
-              <img className="img-game" src={d.img} alt={d.title} />
-            )}
+            {d.type !== 'mp4' && <img className="img-game" src={d.img} alt={d.title} />}
             <p>{d.description}</p>
             {d.page_url !== undefined && (
               <>
                 <br />
-                <a className="see-page" href={d.page_url} target="_blank">
+                <a className="see-page" href={d.page_url} target="_blank" rel="noreferrer">
                   Click para Ver Página 👀
                 </a>
               </>
@@ -78,5 +78,3 @@ const SliderCarousel = ({ data }) => {
     </div>
   )
 }
-
-export default SliderCarousel

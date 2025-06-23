@@ -10,17 +10,13 @@
  * @date     2-Junio-2022
  */
 
-import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import './css/App.css'
 import './css/Styles.css'
 
-import HeaderPortfolio from './HeaderPortafolio'
-import Portfolio from './Portfolio'
-import About from './About'
-
-import ScrollButton from './components/scrollButto/ScrollButton.jsx'
+import { ScrollButton, HeaderPortfolio } from './components/'
+import { About, Games, Portfolio } from './pages'
 
 const App = () => {
   return (
@@ -45,6 +41,26 @@ const App = () => {
           </>
         }
       ></Route>
+      <Route
+        path="/Portafolio_PW3/games"
+        element={
+          <>
+            <HeaderPortfolio />
+            <Games />
+            <ScrollButton />
+          </>
+        }
+      ></Route>
+      {/* <Route
+        path="/Portafolio_PW3/experience"
+        element={
+          <>
+            <HeaderPortfolio />
+            <Experience />
+            <ScrollButton />
+          </>
+        }
+      ></Route> */}
     </Routes>
   )
 }

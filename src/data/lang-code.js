@@ -1,14 +1,14 @@
 // Imagenes
-import CSharp from '../img/icons-tools/c-sharp.png'
-import Python from '../img/icons-tools/python.png'
-import JavaScript from '../img/icons-tools/js.png'
 import CPlusPlus from '../img/icons-tools/c-.png'
-import Java from '../img/icons-tools/java.png'
-import C from '../img/icons-tools/letter-c.png'
-import Html from '../img/icons-tools/html-5.png'
+import CSharp from '../img/icons-tools/c-sharp.png'
 import Css from '../img/icons-tools/css-3.png'
+import Java from '../img/icons-tools/java.png'
+import JavaScript from '../img/icons-tools/js.png'
+import C from '../img/icons-tools/letter-c.png'
+import Python from '../img/icons-tools/python.png'
+import TypeScript from '../img/icons-tools/typescript.png'
 
-const LangCode = [
+export const LangCode = [
   {
     var: '0',
     ref_href: 'https://www.flaticon.com/free-icons/c-sharp',
@@ -17,9 +17,9 @@ const LangCode = [
   },
   {
     var: '1',
-    ref_href: 'https://www.flaticon.com/free-icons/python',
-    title: 'python icons',
-    img_code: Python,
+    ref_href: 'https://www.flaticon.com/free-icons/typescript',
+    title: 'typescript icons',
+    img_code: TypeScript,
   },
   {
     var: '2',
@@ -41,15 +41,15 @@ const LangCode = [
   },
   {
     var: '5',
-    ref_href: 'https://www.flaticon.com/free-icons/letter-c',
-    title: 'letter c icons',
-    img_code: C,
+    ref_href: 'https://www.flaticon.com/free-icons/python',
+    title: 'python icons',
+    img_code: Python,
   },
   {
     var: '6',
-    ref_href: 'https://www.flaticon.com/free-icons/html-5',
-    title: 'html 5 icons',
-    img_code: Html,
+    ref_href: 'https://www.flaticon.com/free-icons/letter-c',
+    title: 'letter c icons',
+    img_code: C,
   },
   {
     var: '7',
@@ -58,5 +58,3 @@ const LangCode = [
     img_code: Css,
   },
 ]
-
-export default LangCode
