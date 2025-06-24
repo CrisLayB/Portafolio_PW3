@@ -1,72 +1,81 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Contact } from "../components";
-import { gamesData, backgroundImages, gameStats } from '../data/games-data';
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
+import { Contact } from '../components'
+import { gamesData, backgroundImages, gameStats } from '../data/games-data'
 
 // Import your CSS file
-import '../css/GamesPage.css';
+import '../css/GamesPage.css'
+import '../css/Itchio.css'
 
 export const Games = () => {
-  const [currentBgIndex, setCurrentBgIndex] = useState(0);
-  const [selectedFilter, setSelectedFilter] = useState('all');
+  const [currentBgIndex, setCurrentBgIndex] = useState(0)
+  const [selectedFilter, setSelectedFilter] = useState('all')
 
   // Auto-rotate background images every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length);
-    }, 4000);
+      setCurrentBgIndex((prevIndex) => (prevIndex + 1) % backgroundImages.length)
+    }, 4000)
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(interval)
+  }, [])
 
   // Filter games based on selection
-  const filteredGames = selectedFilter === 'all' 
-    ? gamesData 
-    : selectedFilter === 'featured'
-    ? gamesData.filter(game => game.featured)
-    : gamesData.filter(game => game.status.toLowerCase() === selectedFilter);
+  const filteredGames =
+    selectedFilter === 'all'
+      ? gamesData
+      : selectedFilter === 'featured'
+        ? gamesData.filter((game) => game.featured)
+        : gamesData.filter((game) => game.status.toLowerCase() === selectedFilter)
 
   const getStatusColor = (status) => {
     switch (status.toLowerCase()) {
-      case 'in development': return '#ffa500';
-      case 'released': return '#4caf50';
-      case 'completed': return '#2196f3';
-      case 'prototype': return '#9c27b0';
-      case 'paused': return 'red';
-      default: return '#666';
+      case 'in development':
+        return '#ffa500'
+      case 'released':
+        return '#4caf50'
+      case 'completed':
+        return '#2196f3'
+      case 'prototype':
+        return '#9c27b0'
+      case 'paused':
+        return 'red'
+      default:
+        return '#666'
     }
-  };
+  }
 
   // Enhanced grid class based on number of games
   const getGridClass = () => {
-    const gameCount = filteredGames.length;
-    if (gameCount === 0) return 'games-grid empty';
-    if (gameCount === 1) return 'games-grid single';
-    if (gameCount === 2) return 'games-grid double';
-    if (gameCount === 3) return 'games-grid triple';
-    if (gameCount === 4) return 'games-grid quad';
-    if (gameCount <= 6) return 'games-grid medium';
-    return 'games-grid large';
-  };
+    const gameCount = filteredGames.length
+    if (gameCount === 0) return 'games-grid empty'
+    if (gameCount === 1) return 'games-grid single'
+    if (gameCount === 2) return 'games-grid double'
+    if (gameCount === 3) return 'games-grid triple'
+    if (gameCount === 4) return 'games-grid quad'
+    if (gameCount <= 6) return 'games-grid medium'
+    return 'games-grid large'
+  }
 
   // Enhanced section class for dynamic height calculation
   const getSectionClass = () => {
-    const gameCount = filteredGames.length;
-    if (gameCount === 0) return 'games-grid-section empty';
-    if (gameCount === 1) return 'games-grid-section single-game';
-    if (gameCount === 2) return 'games-grid-section double-games';
-    if (gameCount === 3) return 'games-grid-section triple-games';
-    if (gameCount === 4) return 'games-grid-section quad-games';
-    if (gameCount <= 6) return 'games-grid-section medium-games';
-    return 'games-grid-section large-games';
-  };
+    const gameCount = filteredGames.length
+    if (gameCount === 0) return 'games-grid-section empty'
+    if (gameCount === 1) return 'games-grid-section single-game'
+    if (gameCount === 2) return 'games-grid-section double-games'
+    if (gameCount === 3) return 'games-grid-section triple-games'
+    if (gameCount === 4) return 'games-grid-section quad-games'
+    if (gameCount <= 6) return 'games-grid-section medium-games'
+    return 'games-grid-section large-games'
+  }
 
   // Calculate approximate rows for better height estimation
   const getEstimatedRows = () => {
-    const gameCount = filteredGames.length;
+    const gameCount = filteredGames.length
     // This will be used by CSS for dynamic height calculation
-    return Math.ceil(gameCount / 3); // Assuming 3 columns on desktop
-  };
+    return Math.ceil(gameCount / 3) // Assuming 3 columns on desktop
+  }
 
   return (
     <div className="App">
@@ -83,15 +92,17 @@ export const Games = () => {
             ))}
             <div className="bg-overlay"></div>
           </div>
-          
+
           <div className="games-hero-content">
             <h1 className="games-hero-title">Game Development Portfolio</h1>
             <p className="games-hero-description">
-              My specialty is video game development and I've had the opportunity to create games 
-              in <span className="highlight">hackathons</span>, <span className="highlight">personal projects</span>, 
-              <span className="highlight"> university projects</span>, and even as part of a 
-              <span className="highlight"> startup studio</span>. I'm always open to new 
-              <span className="highlight"> collaborations</span> and exciting game development challenges.
+              My specialty is video game development and I{`'`}ve had the opportunity to create
+              <span className="highlight"> hackathons</span>,{' '}
+              <span className="highlight">personal projects</span>,
+              <span className="highlight"> university projects</span>, and even as part of a
+              <span className="highlight"> startup studio</span>. I{`'`}m always open to new
+              <span className="highlight"> collaborations</span> and exciting game development
+              challenges.
             </p>
             <div className="games-stats">
               <div className="stat">
@@ -115,42 +126,45 @@ export const Games = () => {
           <div className="filter-container">
             <h2>Explore My Games</h2>
             <div className="filter-buttons">
-              <button 
+              <button
                 className={`filter-btn ${selectedFilter === 'all' ? 'active' : ''}`}
                 onClick={() => setSelectedFilter('all')}
               >
                 All Games ({gamesData.length})
               </button>
-              <button 
+              <button
                 className={`filter-btn ${selectedFilter === 'featured' ? 'active' : ''}`}
                 onClick={() => setSelectedFilter('featured')}
               >
-                Featured ({gamesData.filter(game => game.featured).length})
+                Featured ({gamesData.filter((game) => game.featured).length})
               </button>
-              <button 
+              <button
                 className={`filter-btn ${selectedFilter === 'in development' ? 'active' : ''}`}
                 onClick={() => setSelectedFilter('in development')}
               >
-                In Development ({gamesData.filter(game => game.status.toLowerCase() === 'in development').length})
+                In Development (
+                {gamesData.filter((game) => game.status.toLowerCase() === 'in development').length})
               </button>
-              <button 
+              <button
                 className={`filter-btn ${selectedFilter === 'released' ? 'active' : ''}`}
                 onClick={() => setSelectedFilter('released')}
               >
-                Released ({gamesData.filter(game => game.status.toLowerCase() === 'released').length})
+                Released (
+                {gamesData.filter((game) => game.status.toLowerCase() === 'released').length})
               </button>
-              <button 
+              <button
                 className={`filter-btn ${selectedFilter === 'completed' ? 'active' : ''}`}
                 onClick={() => setSelectedFilter('completed')}
               >
-                Completed ({gamesData.filter(game => game.status.toLowerCase() === 'completed').length})
+                Completed (
+                {gamesData.filter((game) => game.status.toLowerCase() === 'completed').length})
               </button>
             </div>
           </div>
         </section>
 
         {/* Games Grid with Dynamic Height */}
-        <section 
+        <section
           className={getSectionClass()}
           data-game-count={filteredGames.length}
           data-estimated-rows={getEstimatedRows()}
@@ -171,16 +185,19 @@ export const Games = () => {
                         <span>View Details</span>
                       </Link>
                     </div>
-                    <div className="game-status" style={{ backgroundColor: getStatusColor(game.status) }}>
+                    <div
+                      className="game-status"
+                      style={{ backgroundColor: getStatusColor(game.status) }}
+                    >
                       {game.status}
                     </div>
                   </div>
-                  
+
                   <div className="game-card-content">
                     <h3 className="game-title">{game.title}</h3>
                     <p className="game-subtitle">{game.subtitle}</p>
                     <p className="game-description">{game.description}</p>
-                    
+
                     <div className="game-meta">
                       <div className="game-info">
                         <span className="game-category">{game.category}</span>
@@ -188,13 +205,15 @@ export const Games = () => {
                       </div>
                       <div className="game-platform">{game.platform}</div>
                     </div>
-                    
+
                     <div className="game-tech">
                       {game.technologies.map((tech, index) => (
-                        <span key={index} className="tech-tag">{tech}</span>
+                        <span key={index} className="tech-tag">
+                          {tech}
+                        </span>
                       ))}
                     </div>
-                    
+
                     {/* <div className="game-footer">
                       <span className="game-team">{game.team}</span>
                       <Link to={game.link} className="game-link">
@@ -208,11 +227,49 @@ export const Games = () => {
           )}
         </section>
 
+        <section className="itchio-content">
+          <div className="itchio-container">
+            <div className="itchio-logo-section">
+              <div className="itchio-logo">
+                <div className="itchio-icon">🎮</div>
+              </div>
+              <div className="itchio-text">
+                <h2 className="itchio-brand">itch.io</h2>
+                <p className="itchio-subtitle">Game Portfolio</p>
+              </div>
+            </div>
+
+            <div className="itchio-info">
+              <h1 className="itchio-title">Play & Experience My Games</h1>
+              <p className="itchio-description">
+                Visit my itch.io profile to play and experience some of the games showcased above.
+                Download, test, and enjoy interactive demos and full versions of my game development
+                projects. Discover the creativity and passion behind each project!
+              </p>
+
+              <a
+                href="https://crislayb.itch.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-itchio"
+              >
+                <div className="btn-neon-itchio">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <p className="text-itchio">Visit My itch.io Profile</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
         <hr className="hr-contact" />
         <section className="eleven">
           <Contact />
         </section>
       </div>
     </div>
-  );
-};
+  )
+}

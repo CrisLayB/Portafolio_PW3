@@ -15,64 +15,57 @@ import '../css/AboutMeSection.css'
 import '../css/GoldenfySection.css'
 import '../css/PageScroll.css'
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { CardsOuter, CircularNav, Contact, SliderCarousel } from '../components'
 import { GamesInDevelpoment, LangCode, OtherTools } from '../data/'
 import ImgMe from '../img/cris_lay.jpg'
-import MySelf3D from '../img/my_self_in_3d.png'
+import GoldenfyStudiosLogo from '../img/goldenfy_games_logo.png'
 import Tools from '../img/icons-tools/tool-box.png'
 import Code from '../img/icons-tools/window.png'
 import ImgCodeWars from '../img/img-code-wars1.png'
 import ImgHackerRank from '../img/img-hackerrank.png'
-import GoldenfyStudiosLogo from '../img/goldenfy_games_logo.png'
+import MySelf3D from '../img/my_self_in_3d.png'
 
-const profileImages = [
-  ImgMe,
-  MySelf3D,
-];
+const profileImages = [ImgMe, MySelf3D]
 
 const newsItems = [
   {
     id: 1,
-    title: "Platyfa - Goldenfy Studios (Videogame)",
-    description: "Description and new updates about our latest game project...",
-    link: "/Portafolio_PW3/games",
-    date: "2025"
+    title: 'Platyfa - Goldenfy Studios (Videogame)',
+    description: 'Description and new updates about our latest game project...',
+    link: '/Portafolio_PW3/games',
+    date: '2025',
   },
   {
     id: 2,
-    title: "Instagram for Goldenfy Games Its Avaliable",
+    title: 'Instagram for Goldenfy Games Its Avaliable',
     description: "I'm exited to introduce all of you, the oficial instagram page",
-    link: "https://www.instagram.com/goldenfy_studios?igsh=MWJpaXBnZGF3Nnhwcw==",
-    date: "2025"
+    link: 'https://www.instagram.com/goldenfy_studios?igsh=MWJpaXBnZGF3Nnhwcw==',
+    date: '2025',
   },
-];
+]
 
 export const Portfolio = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [currentNewsIndex, setCurrentNewsIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [currentNewsIndex, setCurrentNewsIndex] = useState(0)
 
   useEffect(() => {
     const imageInterval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        (prevIndex + 1) % profileImages.length
-      );
-    }, 4000);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % profileImages.length)
+    }, 4000)
 
-    return () => clearInterval(imageInterval);
-  }, []);
+    return () => clearInterval(imageInterval)
+  }, [])
 
   useEffect(() => {
     const newsInterval = setInterval(() => {
-      setCurrentNewsIndex((prevIndex) => 
-        (prevIndex + 1) % newsItems.length
-      );
-    }, 5000);
+      setCurrentNewsIndex((prevIndex) => (prevIndex + 1) % newsItems.length)
+    }, 5000)
 
-    return () => clearInterval(newsInterval);
-  }, []);
+    return () => clearInterval(newsInterval)
+  }, [])
 
   return (
     <div className="App">
@@ -96,10 +89,10 @@ export const Portfolio = () => {
             {/* Left Side - Profile Image */}
             <div className="profile-section">
               <div className="profile-image-container">
-                <img 
-                  className="profile-image" 
-                  src={profileImages[currentImageIndex]} 
-                  alt="Cristian Fernando Laynez Bachez" 
+                <img
+                  className="profile-image"
+                  src={profileImages[currentImageIndex]}
+                  alt="Cristian Fernando Laynez Bachez"
                 />
                 <div className="image-frame"></div>
                 {/* Image indicators */}
@@ -119,9 +112,10 @@ export const Portfolio = () => {
             <div className="info-section">
               <h1 className="hero-name">Cristian Fernando Laynez Bachez</h1>
               <p className="hero-welcome">
-                Welcome to my web site and portfolio! You can know more about me and my projects. Be free to interact :)
+                Welcome to my web site and portfolio! You can know more about me and my projects. Be
+                free to interact :)
               </p>
-              
+
               <div className="roles-list">
                 <p className="role">Computer Science Engineer</p>
                 <p className="role">Game Developer & Game Designer</p>
@@ -136,15 +130,12 @@ export const Portfolio = () => {
                   <p className="news-description">{newsItems[currentNewsIndex].description}</p>
                   <div className="news-footer">
                     <span className="news-date">{newsItems[currentNewsIndex].date}</span>
-                    <Link 
-                      to={newsItems[currentNewsIndex].link} 
-                      className="news-link"
-                    >
+                    <Link to={newsItems[currentNewsIndex].link} className="news-link">
                       Read More →
                     </Link>
                   </div>
                 </div>
-                
+
                 {/* News indicators */}
                 <div className="news-indicators">
                   {newsItems.map((_, index) => (
@@ -163,11 +154,15 @@ export const Portfolio = () => {
         <section className="about-me-section">
           <div className="about-me-container">
             <div className="about-me-content">
-              <p className="about-text">I am an Engineer in Computer Science and Information Technology.</p>
+              <p className="about-text">
+                I am an Engineer in Computer Science and Information Technology.
+              </p>
               <p className="about-text">I consider myself a creative and analytical person</p>
               <p className="about-text">capable of turning ideas and needs into reality.</p>
-              <p className="about-text highlight">My greatest passion is video game development and design.</p>
-              
+              <p className="about-text highlight">
+                My greatest passion is video game development and design.
+              </p>
+
               <Link to={'/Portafolio_PW3/about'} className="btn-about-me">
                 <div className="btn-neon-blue">
                   <span></span>
@@ -189,7 +184,8 @@ export const Portfolio = () => {
         <section className="five">
           <h1>
             Since I was a child, I have always liked playing video games. <br />
-            One of my biggest dreams and goals is to create the video games I have in my mind. <br />
+            One of my biggest dreams and goals is to create the video games I have in my mind.{' '}
+            <br />
             For this dream, I am studying Computer Science. <br />
             Fortunately, I am achieving it with various projects <br />
             that will be shown below.
@@ -214,16 +210,21 @@ export const Portfolio = () => {
         <section className="goldenfy-content">
           <div className="goldenfy-container">
             <div className="goldenfy-logo-section">
-              <img src={GoldenfyStudiosLogo} alt="Goldenfy Studios Logo" className="goldenfy-logo-img" />
+              <img
+                src={GoldenfyStudiosLogo}
+                alt="Goldenfy Studios Logo"
+                className="goldenfy-logo-img"
+              />
             </div>
-            
+
             <div className="goldenfy-info">
               <h1 className="startup-title">The startup of a video game studio</h1>
               <p className="startup-description">
-                Foundation and initiative of a small multidisciplinary group that seeks to create video games 
-                by mixing the best of gaming with new ideas and different contexts, among other varied experiences.
+                Foundation and initiative of a small multidisciplinary group that seeks to create
+                video games by mixing the best of gaming with new ideas and different contexts,
+                among other varied experiences.
               </p>
-              
+
               <Link to={'/Portafolio_PW3/about'} className="btn-learn-more">
                 <div className="btn-neon">
                   <span></span>
@@ -238,14 +239,15 @@ export const Portfolio = () => {
         </section>
         <section className="seven">
           <div>
-            <h1>But I don't just like video games.</h1>
+            <h1>But I don{`'`}t just like video games.</h1>
             <h1>I also chose this career because I love computing and programming.</h1>
           </div>
         </section>
         <section className="eight">
           <div>
             <h1>
-              When I have the opportunity and time, I do several coding exercises and challenges on websites like:
+              When I have the opportunity and time, I do several coding exercises and challenges on
+              websites like:
             </h1>
             <br />
             <div className="flex-competitive-code">

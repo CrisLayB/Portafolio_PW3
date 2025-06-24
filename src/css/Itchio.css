@@ -1,0 +1,479 @@
+/* ITCH.IO SECTION STYLES */
+.itchio-content {
+  background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%);
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 7;
+  margin: 0;
+}
+
+.itchio-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+.itchio-logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.itchio-logo {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #fa5c5c 0%, #ff2449 50%, #ff6b9d 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 
+    0 0 30px rgba(250, 92, 92, 0.5), 
+    0 0 60px rgba(250, 92, 92, 0.3),
+    inset 0 0 30px rgba(255,255,255,0.2);
+  animation: itchioGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes itchioGlow {
+  from { 
+    box-shadow: 
+      0 0 30px rgba(250, 92, 92, 0.5), 
+      0 0 60px rgba(250, 92, 92, 0.3), 
+      inset 0 0 30px rgba(255,255,255,0.2); 
+  }
+  to { 
+    box-shadow: 
+      0 0 40px rgba(250, 92, 92, 0.8), 
+      0 0 80px rgba(250, 92, 92, 0.5), 
+      inset 0 0 40px rgba(255,255,255,0.3); 
+  }
+}
+
+.itchio-icon {
+  font-size: 120px;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+}
+
+.itchio-text {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.itchio-brand {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #fa5c5c, #ff6b9d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.itchio-subtitle {
+  font-size: 1.2rem;
+  color: #ff6b9d;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.itchio-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.itchio-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #fa5c5c;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.itchio-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+/* Itch.io Neon Button Styling */
+.btn-itchio {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.btn-neon-itchio {
+  position: relative;
+  display: inline-block;
+  padding: 18px 35px;
+  color: #fa5c5c;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  overflow: hidden;
+  border: 2px solid #fa5c5c;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 10px rgba(250, 92, 92, 0.2);
+}
+
+.btn-neon-itchio:hover {
+  background: #fa5c5c;
+  color: #000;
+  box-shadow: 
+    0 0 5px #fa5c5c,
+    0 0 25px #fa5c5c,
+    0 0 50px #fa5c5c,
+    0 0 100px #fa5c5c;
+  transform: translateY(-2px);
+}
+
+.btn-neon-itchio span {
+  position: absolute;
+  display: block;
+}
+
+.btn-neon-itchio span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #fa5c5c);
+  animation: animateItchio1 1.5s linear infinite;
+}
+
+.btn-neon-itchio span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #fa5c5c);
+  animation: animateItchio2 1.5s linear infinite;
+  animation-delay: 0.375s;
+}
+
+.btn-neon-itchio span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #fa5c5c);
+  animation: animateItchio3 1.5s linear infinite;
+  animation-delay: 0.75s;
+}
+
+.btn-neon-itchio span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #fa5c5c);
+  animation: animateItchio4 1.5s linear infinite;
+  animation-delay: 1.125s;
+}
+
+@keyframes animateItchio1 {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+@keyframes animateItchio2 {
+  0% { top: -100%; }
+  50%, 100% { top: 100%; }
+}
+
+@keyframes animateItchio3 {
+  0% { right: -100%; }
+  50%, 100% { right: 100%; }
+}
+
+@keyframes animateItchio4 {
+  0% { bottom: -100%; }
+  50%, 100% { bottom: 100%; }
+}
+
+.text-itchio {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0;
+  z-index: 1;
+  position: relative;
+  color: inherit;
+}
+
+/* Responsive Design for Itch.io Section */
+@media screen and (max-width: 1024px) {
+  .itchio-container {
+    gap: 3rem;
+  }
+  
+  .itchio-logo {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .itchio-icon {
+    font-size: 100px;
+  }
+  
+  .itchio-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .itchio-content {
+    min-height: 80vh;
+    padding: 3rem 1.5rem;
+  }
+  
+  .itchio-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .itchio-info {
+    align-items: center;
+  }
+  
+  .itchio-description {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .itchio-content {
+    padding: 2rem 1rem;
+  }
+  
+  .itchio-logo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .itchio-icon {
+    font-size: 80px;
+  }
+  
+  .itchio-brand {
+    font-size: 2rem;
+  }
+  
+  .itchio-title {
+    font-size: 2rem;
+  }
+  
+  .itchio-description {
+    font-size: 1.1rem;
+  }
+  
+  .btn-neon-itchio {
+    padding: 15px 30px;
+    letter-spacing: 3px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .itchio-logo {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .itchio-title {
+    font-size: 1.8rem;
+  }
+  
+  .itchio-description {
+    font-size: 1rem;
+  }
+  
+  .itchio-brand {
+    font-size: 1.8rem;
+  }
+  
+  .itchio-subtitle {
+    font-size: 1rem;
+  }
+  
+  .btn-neon-itchio {
+    padding: 12px 25px;
+    letter-spacing: 2px;
+  }
+  
+  .text-itchio {
+    font-size: 0.9rem;
+  }
+}
+
+/* RESPONSIVE DESIGN WITH DYNAMIC HEIGHTS */
+@media screen and (max-width: 1200px) {
+  .games-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  .games-filter {
+    padding: 2.5rem 1.5rem;
+    height: 170px;
+  }
+  
+  .filter-container h2 {
+    font-size: 2rem;
+  }
+  
+  /* Adjust heights for medium screens */
+  .games-grid-section.single-game { min-height: 70vh; }
+  .games-grid-section.double-games { min-height: 75vh; }
+  .games-grid-section.triple-games { min-height: 80vh; }
+  .games-grid-section.quad-games { min-height: 120vh; }
+  .games-grid-section.medium-games { min-height: 130vh; }
+  .games-grid-section.large-games { min-height: calc(80vh + (var(--estimated-rows, 3) - 1) * 70vh); }
+}
+
+@media screen and (max-width: 768px) {
+  .games-hero-title {
+    font-size: 3rem;
+  }
+  
+  .games-hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .games-stats {
+    gap: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+  
+  .games-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+  
+  /* All game count classes become single column on mobile */
+  .games-grid.single,
+  .games-grid.double,
+  .games-grid.triple,
+  .games-grid.quad,
+  .games-grid.medium,
+  .games-grid.large {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+  
+  .filter-buttons {
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+  
+  .games-filter {
+    padding: 2rem 1rem;
+    height: 160px;
+  }
+  
+  .filter-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Mobile: Single column means each game needs its own height */
+  .games-grid-section.single-game { min-height: 80vh; }
+  .games-grid-section.double-games { min-height: 140vh; }
+  .games-grid-section.triple-games { min-height: 200vh; }
+  .games-grid-section.quad-games { min-height: 260vh; }
+  .games-grid-section.medium-games { min-height: 350vh; }
+  .games-grid-section.large-games { min-height: calc(80vh * var(--game-count, 7)); }
+  
+  .no-games-message {
+    padding: 2rem 1rem;
+  }
+  
+  .no-games-message h3 {
+    font-size: 1.5rem;
+  }
+  
+  .no-games-message p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .games-hero {
+    height: 80vh;
+  }
+  
+  .games-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .games-hero-description {
+    font-size: 1rem;
+  }
+  
+  .games-hero-content {
+    padding: 1rem;
+  }
+  
+  .games-filter {
+    padding: 1.5rem 1rem;
+    height: 200px;
+  }
+  
+  .filter-container h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .filter-btn {
+    width: 180px;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+  
+  .game-card {
+    min-height: 550px; /* Slightly smaller cards on mobile */
+  }
+  
+  .game-card-content {
+    padding: 1rem;
+  }
+  
+  .games-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

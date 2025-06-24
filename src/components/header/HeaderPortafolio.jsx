@@ -4,10 +4,10 @@
  *
  * Proyecto 3 - Portafolio Personal
  *
- * ! Header Portafolio: Encabezado Principal
+ * ! Header Portafolio: Encabezado Principal ENHANCED
  *
  * @author   Cristian Fernando Laynez Bachez - 201281
- * @date     2-Junio-2022
+ * @date     2-Junio-2022 (Enhanced 2025)
  */
 
 import { useState, useEffect } from 'react'
@@ -17,6 +17,7 @@ import './Header.css'
 
 export const HeaderPortfolio = () => {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -28,129 +29,131 @@ export const HeaderPortfolio = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Get current page for active state
+  const getCurrentPage = () => {
+    const path = location.pathname
+    if (path === '/Portafolio_PW3/' || path === '/') return 'home'
+    if (path === '/Portafolio_PW3/about') return 'about'
+    if (path === '/Portafolio_PW3/games') return 'games'
+    return ''
+  }
+
+  const currentPage = getCurrentPage()
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isMobileMenuOpen &&
+        !event.target.closest('.mobile-menu-btn') &&
+        !event.target.closest('.mobile-menu')
+      ) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside)
+    return () => document.removeEventListener('click', handleClickOutside)
+  }, [isMobileMenuOpen])
+
   return (
-    <nav
-      className={`navbar ${isScrolled ? 'scrolled' : ''}`}
-      style={{
-        position: 'fixed',
-        top: 0,
-        width: '100%',
-        background: isScrolled ? '#222' : 'rgba(34,34,34,0.85)',
-        color: '#fff',
-        boxShadow: isScrolled ? '0 2px 8px rgba(0,0,0,0.15)' : 'none',
-        transition: 'background 0.3s, box-shadow 0.3s',
-        zIndex: 1000,
-      }}
-    >
-      <div
-        className="navbar-container"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          maxWidth: 1200,
-          margin: '0 auto',
-          padding: '0.7rem 2rem',
-        }}
-      >
-        <Link
-          to="/Portafolio_PW3/"
-          className="navbar-brand"
-          style={{
-            textDecoration: 'none',
-            color: '#fff',
-            fontWeight: 700,
-            fontSize: '1.7rem',
-            letterSpacing: '1px',
-          }}
-        >
-          <h2 style={{ margin: 0, fontSize: '1.7rem', fontWeight: 700 }}>Cristian Laynez</h2>
+    <nav className={`navbar-enhanced ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="navbar-container-enhanced">
+        {/* Brand Logo - Left */}
+        <Link to="/Portafolio_PW3/" className="navbar-brand-enhanced">
+          <span className="brand-text">Cristian Laynez</span>
+          <div className="brand-underline"></div>
         </Link>
-        <ul
-          className="navbar-menu"
-          style={{
-            display: 'flex',
-            gap: '2rem',
-            listStyle: 'none',
-            margin: 0,
-            padding: 0,
-          }}
-        >
-          <li className={`navbar-item ${location.pathname === '/' ? 'active' : ''}`}>
+
+        {/* Desktop Menu - Right */}
+        <ul className="navbar-menu-enhanced">
+          <li className="navbar-item-enhanced">
             <Link
               to="/Portafolio_PW3/"
-              className="navbar-link"
-              style={{
-                color: location.pathname === '/' ? '#00d8ff' : '#fff',
-                textDecoration: 'none',
-                fontWeight: 500,
-                fontSize: '1.1rem',
-                borderBottom:
-                  location.pathname === '/' ? '2px solid #00d8ff' : '2px solid transparent',
-                padding: '0.2rem 0',
-                transition: 'color 0.2s, border-bottom 0.2s',
-              }}
+              className={`navbar-link-enhanced home-link ${currentPage === 'home' ? 'active' : ''}`}
             >
-              Home
+              <span className="link-text">Home</span>
+              <div className="link-background"></div>
+              <div className="neon-border">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </Link>
           </li>
-          <li className={`navbar-item ${location.pathname === '/about' ? 'active' : ''}`}>
+          <li className="navbar-item-enhanced">
             <Link
               to="/Portafolio_PW3/about"
-              className="navbar-link"
-              style={{
-                color: location.pathname === '/about' ? '#00d8ff' : '#fff',
-                textDecoration: 'none',
-                fontWeight: 500,
-                fontSize: '1.1rem',
-                borderBottom:
-                  location.pathname === '/about' ? '2px solid #00d8ff' : '2px solid transparent',
-                padding: '0.2rem 0',
-                transition: 'color 0.2s, border-bottom 0.2s',
-              }}
+              className={`navbar-link-enhanced about-link ${currentPage === 'about' ? 'active' : ''}`}
             >
-              About
+              <span className="link-text">About</span>
+              <div className="link-background"></div>
+              <div className="neon-border">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </Link>
           </li>
-          <li className={`navbar-item ${location.pathname === '/games' ? 'active' : ''}`}>
+          <li className="navbar-item-enhanced">
             <Link
               to="/Portafolio_PW3/games"
-              className="navbar-link"
-              style={{
-                color: location.pathname === '/games' ? '#00d8ff' : '#fff',
-                textDecoration: 'none',
-                fontWeight: 500,
-                fontSize: '1.1rem',
-                borderBottom:
-                  location.pathname === '/games' ? '2px solid #00d8ff' : '2px solid transparent',
-                padding: '0.2rem 0',
-                transition: 'color 0.2s, border-bottom 0.2s',
-              }}
+              className={`navbar-link-enhanced games-link ${currentPage === 'games' ? 'active' : ''}`}
             >
-              Games
+              <span className="link-text">Games</span>
+              <div className="link-background"></div>
+              <div className="neon-border">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </Link>
           </li>
-          {/* <li className={`navbar-item ${location.pathname === '/experience' ? 'active' : ''}`}>
-            <Link
-              to="/Portafolio_PW3/experience"
-              className="navbar-link"
-              style={{
-                color: location.pathname === '/experience' ? '#00d8ff' : '#fff',
-                textDecoration: 'none',
-                fontWeight: 500,
-                fontSize: '1.1rem',
-                borderBottom:
-                  location.pathname === '/experience'
-                    ? '2px solid #00d8ff'
-                    : '2px solid transparent',
-                padding: '0.2rem 0',
-                transition: 'color 0.2s, border-bottom 0.2s',
-              }}
-            >
-              Experience
-            </Link>
-          </li> */}
         </ul>
+
+        {/* Mobile Menu Button - Right */}
+        <button
+          className={`mobile-menu-btn ${isMobileMenuOpen ? 'open' : ''}`}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+          <Link
+            to="/Portafolio_PW3/"
+            className={`mobile-link home-link ${currentPage === 'home' ? 'active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <span className="mobile-link-icon">🏠</span>
+            Home
+          </Link>
+          <Link
+            to="/Portafolio_PW3/about"
+            className={`mobile-link about-link ${currentPage === 'about' ? 'active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <span className="mobile-link-icon">👤</span>
+            About
+          </Link>
+          <Link
+            to="/Portafolio_PW3/games"
+            className={`mobile-link games-link ${currentPage === 'games' ? 'active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <span className="mobile-link-icon">🎮</span>
+            Games
+          </Link>
+        </div>
       </div>
     </nav>
   )
