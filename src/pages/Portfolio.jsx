@@ -225,7 +225,10 @@ export const Portfolio = () => {
                 among other varied experiences.
               </p>
 
-              <Link to={'/Portafolio_PW3/about'} className="btn-learn-more">
+              <Link
+                to={'https://www.instagram.com/goldenfy_studios?igsh=MWJpaXBnZGF3Nnhwcw=='}
+                className="btn-learn-more"
+              >
                 <div className="btn-neon">
                   <span></span>
                   <span></span>

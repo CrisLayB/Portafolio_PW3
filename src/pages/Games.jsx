@@ -1,8 +1,10 @@
+// Updated Games.jsx component with adaptive filter section and scroll functionality
+
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Contact } from '../components'
-import { gamesData, backgroundImages, gameStats } from '../data/games-data'
+import { enhancedGamesData, backgroundImages, gameStats } from '../data/games-data' // Updated import
 
 // Import your CSS file
 import '../css/GamesPage.css'
@@ -21,13 +23,51 @@ export const Games = () => {
     return () => clearInterval(interval)
   }, [])
 
-  // Filter games based on selection
+  // 🚀 ENHANCED FILTER HANDLER WITH SCROLL TO GAMES SECTION
+  const handleFilterChange = (newFilter) => {
+    setSelectedFilter(newFilter)
+
+    // Optional: Scroll to games section after filter change
+    setTimeout(() => {
+      const gamesSection = document.getElementById('games-grid-section')
+      if (gamesSection) {
+        const navHeight = 120 // Adjust based on your nav height
+        const targetPosition = gamesSection.offsetTop - navHeight
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth',
+        })
+      }
+    }, 100)
+  }
+
+  // 🚀 SCROLL LINK COMPONENT FOR NAVIGATION WITH SCROLL TO TOP
+  const ScrollLink = ({ to, children, className, ...props }) => {
+    const handleClick = () => {
+      // Scroll to top when navigating to game details
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        })
+      }, 200)
+    }
+
+    return (
+      <Link to={to} className={className} onClick={handleClick} {...props}>
+        {children}
+      </Link>
+    )
+  }
+
+  // Filter games based on selection - using enhancedGamesData now
   const filteredGames =
     selectedFilter === 'all'
-      ? gamesData
+      ? enhancedGamesData
       : selectedFilter === 'featured'
-        ? gamesData.filter((game) => game.featured)
-        : gamesData.filter((game) => game.status.toLowerCase() === selectedFilter)
+        ? enhancedGamesData.filter((game) => game.featured)
+        : enhancedGamesData.filter((game) => game.status.toLowerCase() === selectedFilter)
 
   const getStatusColor = (status) => {
     switch (status.toLowerCase()) {
@@ -94,7 +134,7 @@ export const Games = () => {
           </div>
 
           <div className="games-hero-content">
-            <h1 className="games-hero-title">Game Development Portfolio</h1>
+            <h1 className="games-hero-title">Game Development</h1>
             <p className="games-hero-description">
               My specialty is video game development and I{`'`}ve had the opportunity to create
               <span className="highlight"> hackathons</span>,{' '}
@@ -121,50 +161,63 @@ export const Games = () => {
           </div>
         </section>
 
-        {/* Filter Section */}
-        <section className="games-filter">
+        {/* 🚀 ENHANCED FILTER SECTION WITH ADAPTIVE HEIGHT */}
+        <section className="games-filter" data-button-count="5">
           <div className="filter-container">
             <h2>Explore My Games</h2>
             <div className="filter-buttons">
               <button
                 className={`filter-btn ${selectedFilter === 'all' ? 'active' : ''}`}
-                onClick={() => setSelectedFilter('all')}
+                onClick={() => handleFilterChange('all')}
               >
-                All Games ({gamesData.length})
+                All Games ({enhancedGamesData.length})
               </button>
               <button
                 className={`filter-btn ${selectedFilter === 'featured' ? 'active' : ''}`}
-                onClick={() => setSelectedFilter('featured')}
+                onClick={() => handleFilterChange('featured')}
               >
-                Featured ({gamesData.filter((game) => game.featured).length})
+                Featured ({enhancedGamesData.filter((game) => game.featured).length})
               </button>
               <button
                 className={`filter-btn ${selectedFilter === 'in development' ? 'active' : ''}`}
-                onClick={() => setSelectedFilter('in development')}
+                onClick={() => handleFilterChange('in development')}
               >
                 In Development (
-                {gamesData.filter((game) => game.status.toLowerCase() === 'in development').length})
+                {
+                  enhancedGamesData.filter((game) => game.status.toLowerCase() === 'in development')
+                    .length
+                }
+                )
               </button>
               <button
                 className={`filter-btn ${selectedFilter === 'released' ? 'active' : ''}`}
-                onClick={() => setSelectedFilter('released')}
+                onClick={() => handleFilterChange('released')}
               >
                 Released (
-                {gamesData.filter((game) => game.status.toLowerCase() === 'released').length})
+                {
+                  enhancedGamesData.filter((game) => game.status.toLowerCase() === 'released')
+                    .length
+                }
+                )
               </button>
               <button
                 className={`filter-btn ${selectedFilter === 'completed' ? 'active' : ''}`}
-                onClick={() => setSelectedFilter('completed')}
+                onClick={() => handleFilterChange('completed')}
               >
                 Completed (
-                {gamesData.filter((game) => game.status.toLowerCase() === 'completed').length})
+                {
+                  enhancedGamesData.filter((game) => game.status.toLowerCase() === 'completed')
+                    .length
+                }
+                )
               </button>
             </div>
           </div>
         </section>
 
-        {/* Games Grid with Dynamic Height */}
+        {/* 🚀 GAMES GRID WITH ID FOR SCROLL TARGET */}
         <section
+          id="games-grid-section"
           className={getSectionClass()}
           data-game-count={filteredGames.length}
           data-estimated-rows={getEstimatedRows()}
@@ -181,9 +234,10 @@ export const Games = () => {
                   <div className="game-card-image">
                     <img src={game.coverImage} alt={game.title} />
                     <div className="game-card-overlay">
-                      <Link to={game.link} className="play-button">
+                      {/* 🚀 ENHANCED LINK WITH SCROLL TO TOP */}
+                      <ScrollLink to={`/Portafolio_PW3/games/${game.id}`} className="play-button">
                         <span>View Details</span>
-                      </Link>
+                      </ScrollLink>
                     </div>
                     <div
                       className="game-status"
@@ -214,12 +268,13 @@ export const Games = () => {
                       ))}
                     </div>
 
-                    {/* <div className="game-footer">
+                    {/* 🚀 ENHANCED FOOTER WITH SCROLL TO TOP */}
+                    <div className="game-footer">
                       <span className="game-team">{game.team}</span>
-                      <Link to={game.link} className="game-link">
+                      <ScrollLink to={`/Portafolio_PW3/games/${game.id}`} className="game-link">
                         Explore Game →
-                      </Link>
-                    </div> */}
+                      </ScrollLink>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -273,3 +328,6 @@ export const Games = () => {
     </div>
   )
 }
+
+// Make sure to export as default if that's how you're importing it
+export default Games

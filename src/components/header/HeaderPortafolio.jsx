@@ -14,6 +14,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import './Header.css'
+import { scrollToTop } from '../../utils/scroll'
 
 export const HeaderPortfolio = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -56,11 +57,15 @@ export const HeaderPortfolio = () => {
     return () => document.removeEventListener('click', handleClickOutside)
   }, [isMobileMenuOpen])
 
+  const handleClick = () => {
+    scrollToTop({ smooth: false, delay: 0 })
+  }
+
   return (
     <nav className={`navbar-enhanced ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container-enhanced">
         {/* Brand Logo - Left */}
-        <Link to="/Portafolio_PW3/" className="navbar-brand-enhanced">
+        <Link to="/Portafolio_PW3/" className="navbar-brand-enhanced" onClick={handleClick}>
           <span className="brand-text">Cristian Laynez</span>
           <div className="brand-underline"></div>
         </Link>
@@ -71,6 +76,7 @@ export const HeaderPortfolio = () => {
             <Link
               to="/Portafolio_PW3/"
               className={`navbar-link-enhanced home-link ${currentPage === 'home' ? 'active' : ''}`}
+              onClick={handleClick}
             >
               <span className="link-text">Home</span>
               <div className="link-background"></div>
@@ -86,6 +92,7 @@ export const HeaderPortfolio = () => {
             <Link
               to="/Portafolio_PW3/about"
               className={`navbar-link-enhanced about-link ${currentPage === 'about' ? 'active' : ''}`}
+              onClick={handleClick}
             >
               <span className="link-text">About</span>
               <div className="link-background"></div>
@@ -101,6 +108,7 @@ export const HeaderPortfolio = () => {
             <Link
               to="/Portafolio_PW3/games"
               className={`navbar-link-enhanced games-link ${currentPage === 'games' ? 'active' : ''}`}
+              onClick={handleClick}
             >
               <span className="link-text">Games</span>
               <div className="link-background"></div>
@@ -132,7 +140,10 @@ export const HeaderPortfolio = () => {
           <Link
             to="/Portafolio_PW3/"
             className={`mobile-link home-link ${currentPage === 'home' ? 'active' : ''}`}
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={() => {
+              setIsMobileMenuOpen(false)
+              handleClick()
+            }}
           >
             <span className="mobile-link-icon">🏠</span>
             Home
@@ -140,7 +151,10 @@ export const HeaderPortfolio = () => {
           <Link
             to="/Portafolio_PW3/about"
             className={`mobile-link about-link ${currentPage === 'about' ? 'active' : ''}`}
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={() => {
+              setIsMobileMenuOpen(false)
+              handleClick()
+            }}
           >
             <span className="mobile-link-icon">👤</span>
             About
@@ -148,7 +162,10 @@ export const HeaderPortfolio = () => {
           <Link
             to="/Portafolio_PW3/games"
             className={`mobile-link games-link ${currentPage === 'games' ? 'active' : ''}`}
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={() => {
+              setIsMobileMenuOpen(false)
+              handleClick()
+            }}
           >
             <span className="mobile-link-icon">🎮</span>
             Games

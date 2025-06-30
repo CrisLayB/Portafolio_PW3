@@ -130,6 +130,66 @@
   letter-spacing: 1px;
 }
 
+/* SMOOTH TRANSITIONS FOR HEIGHT CHANGES */
+.games-filter {
+  transition: height 0.3s ease, min-height 0.3s ease;
+}
+
+.filter-buttons {
+  transition: flex-direction 0.3s ease, gap 0.3s ease;
+}
+
+.filter-btn {
+  transition: all 0.3s ease, width 0.3s ease, padding 0.3s ease;
+}
+
+/* ACCESSIBILITY IMPROVEMENTS FOR MOBILE */
+@media screen and (max-width: 480px) {
+  .filter-btn {
+    /* Better touch targets */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Prevent text wrapping */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .filter-btn:focus {
+    outline: 2px solid var(--blue-light);
+    outline-offset: 2px;
+  }
+  
+  .filter-btn:active {
+    transform: scale(0.98);
+  }
+}
+
+/* LANDSCAPE MODE OPTIMIZATION FOR MOBILE */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .games-filter {
+    padding: 1.5rem 1rem;
+    min-height: 140px;
+  }
+  
+  .filter-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .filter-btn {
+    width: auto;
+    min-width: 120px;
+    padding: 8px 12px;
+    font-size: 0.75rem;
+  }
+}
+
 /* Filter Section - COMPLETELY ISOLATED */
 .games-filter {
   background: linear-gradient(135deg, var(--blue-elegant-dark), var(--blue-elegant));
@@ -137,13 +197,15 @@
   text-align: center;
   z-index: 9;
   position: relative;
-  /* CRITICAL: Fixed height to prevent expansion */
-  height: 180px;
+  
+  /* 🚀 FIXED: Change from fixed height to min-height */
+  min-height: 180px; /* Minimum height for desktop */
+  height: auto; /* Allow content to expand */
+  
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  /* Ensure no overlap */
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -180,6 +242,10 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.85rem;
+  
+  /* 🚀 Ensure buttons don't shrink too much */
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .filter-btn:hover {
@@ -193,6 +259,118 @@
   background: var(--blue-medium);
   color: white;
   box-shadow: 0 0 20px rgba(33, 150, 243, 0.5);
+}
+
+/* RESPONSIVE DESIGN WITH ADAPTIVE HEIGHTS */
+
+@media screen and (max-width: 1200px) {
+  .games-filter {
+    padding: 2.5rem 1.5rem;
+    min-height: 170px; /* Minimum height for tablets */
+  }
+  
+  .filter-container h2 {
+    font-size: 2rem;
+  }
+  
+  .filter-buttons {
+    gap: 0.8rem;
+  }
+  
+  .filter-btn {
+    padding: 9px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .games-filter {
+    padding: 2rem 1rem;
+    min-height: 160px; /* Minimum height for small tablets */
+  }
+  
+  .filter-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .filter-buttons {
+    gap: 0.5rem;
+  }
+  
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .games-filter {
+    /* 🚀 KEY FIX: Allow full expansion on mobile */
+    padding: 1.5rem 1rem 2rem 1rem; /* Extra bottom padding */
+    min-height: auto; /* No minimum height restriction */
+    height: auto; /* Full height flexibility */
+  }
+  
+  .filter-container h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem; /* More space for stacked buttons */
+  }
+  
+  .filter-buttons {
+    /* 🚀 STACK BUTTONS VERTICALLY ON MOBILE */
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* More space between stacked buttons */
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .filter-btn {
+    /* 🚀 FULL WIDTH BUTTONS ON MOBILE */
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    padding: 12px 16px; /* More padding for touch targets */
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* EXTRA SMALL SCREENS */
+@media screen and (max-width: 360px) {
+  .games-filter {
+    padding: 1.2rem 0.8rem 1.8rem 0.8rem;
+  }
+  
+  .filter-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .filter-buttons {
+    gap: 0.8rem;
+    max-width: 240px;
+  }
+  
+  .filter-btn {
+    max-width: 220px;
+    padding: 10px 14px;
+    font-size: 0.7rem;
+  }
+}
+
+/* DYNAMIC HEIGHT CALCULATION UTILITY */
+.games-filter[data-button-count="5"] {
+  /* For 5 buttons stacked vertically on mobile */
+  min-height: calc(
+    1.6rem + /* Title height */
+    1.5rem + /* Title margin bottom */
+    (12px + 16px + 16px) * 5 + /* Button height * 5 */
+    1rem * 4 + /* Gap between buttons * 4 */
+    1.5rem + /* Top padding */
+    2rem /* Bottom padding */
+  );
 }
 
 /* DYNAMIC HEIGHT GAMES GRID SECTION */

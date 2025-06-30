@@ -17,6 +17,7 @@ import './css/Styles.css'
 
 import { ScrollButton, HeaderPortfolio } from './components/'
 import { About, Games, Portfolio } from './pages'
+import GameView from './pages/GameView'
 
 const App = () => {
   return (
@@ -51,6 +52,16 @@ const App = () => {
           </>
         }
       ></Route>
+      <Route
+        path="/Portafolio_PW3/games/:gameId"
+        element={
+          <>
+            <HeaderPortfolio />
+            <GameView />
+            <ScrollButton />
+          </>
+        }
+      />
       {/* <Route
         path="/Portafolio_PW3/experience"
         element={

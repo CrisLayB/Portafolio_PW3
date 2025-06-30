@@ -1,0 +1,6 @@
+export { default as HeroSection } from './HeroSection'
+export { default as OverviewSection } from './OverviewSection'
+export { default as CodeShowcaseSection } from './CodeShowcaseSection'
+export { default as FeaturesSection } from './FeaturesSection'
+export { default as GallerySection } from './GallerySection'
+export { default as HackathonStorySection } from './HackathonStorySection'

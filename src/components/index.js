@@ -1,6 +1,7 @@
 export * from './cardsOuter/CardsOuter.jsx'
 export * from './circularNav/CircularNav.jsx'
 export * from './contact/Contact.jsx'
+// export * from './gameView'
 export * from './header/HeaderPortafolio.jsx'
 export * from './scrollButton/ScrollButton.jsx'
 export * from './shootingStars/ShootingStars.jsx'
